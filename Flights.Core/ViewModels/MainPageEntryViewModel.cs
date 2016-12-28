@@ -203,7 +203,7 @@ namespace Flights.Core.ViewModels
         public ICommand SetOneWayCommand { get; set; }
         public ICommand SetReturnCommand { get; set; }
 
-        public MainPageEntryViewModel(IJsonConverter jsonConverter,
+        public MainPageEntryViewModel(IJsonConverter jsonConverter, 
             IFileStore fileStore,
             ICitiesService citiesService,
             IIataService iataService)
