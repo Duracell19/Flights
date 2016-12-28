@@ -243,7 +243,10 @@ namespace Flights.Core.ViewModels
         {
             if (AllFieldsNotEmpty())
             {
-
+                _dataOfFlights.DateOneWay = DateOneWay.ToString("yyyy-MM-dd");
+                _dataOfFlights.DateReturn = DateReturn.ToString("yyyy-MM-dd");
+                var param = _jsonConverter.Serialize(_dataOfFlights);
+                ShowViewModel<FlightsListViewModel>(new { param });
             }
             else
             {
@@ -313,6 +316,7 @@ namespace Flights.Core.ViewModels
 
         private async Task SetIatasFromAsync()
         {
+            _dataOfFlights.CityFrom = SelectedCityFrom;
             var iatasFrom = await _iataService.GetIataAsync(SelectedCityFrom);
             _dataOfFlights.IatasFrom = iatasFrom;
             IsDataAboutFlightExist = (IsDataAboutFlightExistCheck()) ? true : false;
@@ -320,6 +324,7 @@ namespace Flights.Core.ViewModels
 
         private async Task SetIatasToAsync()
         {
+            _dataOfFlights.CityTo = SelectedCityTo;
             var iatasTo = await _iataService.GetIataAsync(SelectedCityTo);
             _dataOfFlights.IatasTo = iatasTo;
             IsDataAboutFlightExist = (IsDataAboutFlightExistCheck()) ? true : false;

@@ -172,6 +172,7 @@
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Setup.cs" />
+    <Compile Include="Views\FlightsListView.cs" />
     <Compile Include="Views\MainPageEntryView.cs" />
     <Compile Include="Views\MainPageFavoritesView.cs" />
     <Compile Include="Views\MainPageView.cs" />
@@ -191,6 +192,9 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MainPageFavoritesView.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FlightsListView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>

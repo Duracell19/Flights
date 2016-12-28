@@ -22,6 +22,7 @@ namespace Flights.Core
             Mvx.RegisterType<IFileStore, FileStore>();
             Mvx.RegisterType<ICitiesService, CitiesService>();
             Mvx.RegisterType<IIataService, IataService>();
+            Mvx.RegisterType<IFlightsService, FlightsService>();
 
             Mvx.RegisterSingleton(() => UserDialogs.Instance);
 

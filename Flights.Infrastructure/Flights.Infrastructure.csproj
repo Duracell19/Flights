@@ -41,6 +41,7 @@
     <Compile Include="Description.cs" />
     <Compile Include="Interfaces\ICitiesService.cs" />
     <Compile Include="Interfaces\IFileStore.cs" />
+    <Compile Include="Interfaces\IFlightsService.cs" />
     <Compile Include="Interfaces\IHttpService.cs" />
     <Compile Include="Interfaces\IIataService.cs" />
     <Compile Include="Interfaces\IJsonConverter.cs" />

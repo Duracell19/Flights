@@ -39,12 +39,23 @@
       <Project>{526D5BAF-1C50-4963-874B-CD0B16241826}</Project>
       <Name>Flights.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Flights.Models\Flights.Models.csproj">
+      <Project>{60C667CF-FC7B-4856-8865-A76DEEBB4EC0}</Project>
+      <Name>Flights.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CitiesService.cs" />
     <Compile Include="DataModels\AirportInfo.cs" />
+    <Compile Include="DataModels\CarrierInfo.cs" />
+    <Compile Include="DataModels\FlightInfo.cs" />
+    <Compile Include="DataModels\FromInfo.cs" />
+    <Compile Include="DataModels\ThreadInfo.cs" />
+    <Compile Include="DataModels\ThreadsInfo.cs" />
+    <Compile Include="DataModels\ToInfo.cs" />
     <Compile Include="DataModels\Value.cs" />
     <Compile Include="FileStore.cs" />
+    <Compile Include="FlightsService.cs" />
     <Compile Include="Helpers\Countries.cs" />
     <Compile Include="HttpService.cs" />
     <Compile Include="IataService.cs" />
