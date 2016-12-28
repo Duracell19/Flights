@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <AbsoluteLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:text="From"
+                android:textColor="#2ECCFA"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="10dp"
+                android:layout_y="70dp" />
+            <MvxAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_x="90dp"
+                android:layout_y="30dp"
+                android:hint="Choose a country"
+                local:MvxBind="Text ItemsCountriesFrom.CurrentText, Mode=OneWay;
+                               ItemsSource ItemsCountriesFrom.AutoCompleteSuggestions;                                                   
+                               PartialText ItemsCountriesFrom.CurrentTextHint;                                          
+                               SelectedObject SelectedCountryFrom" />
+            <MvxAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_x="90dp"
+                android:layout_y="80dp"
+                android:hint="Choose a city"
+                local:MvxBind="Text ItemsCitiesFrom.CurrentText, Mode=OneWay;              
+                               ItemsSource ItemsCitiesFrom.AutoCompleteSuggestions;          
+                               PartialText ItemsCitiesFrom.CurrentTextHint;                    
+                               SelectedObject SelectedCityFrom;                                
+                               Enabled IsAirportFromExist" />
+            <TextView
+                android:text="To"
+                android:textColor="#2ECCFA"
+                android:textSize="25sp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_x="10dp"
+                android:layout_y="170dp" />
+            <MvxAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_x="90dp"
+                android:layout_y="130dp"
+                android:hint="Choose a country"
+                local:MvxBind="Text ItemsCountriesTo.CurrentText, Mode=OneWay;    
+                               ItemsSource ItemsCountriesTo.AutoCompleteSuggestions;   
+                               PartialText ItemsCountriesTo.CurrentTextHint;         
+                               SelectedObject SelectedCountryTo" />
+            <MvxAutoCompleteTextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_x="90dp"
+                android:layout_y="180dp"
+                android:hint="Choose a city"
+                local:MvxBind="Text ItemsCitiesTo.CurrentText, Mode=OneWay;     
+                               ItemsSource ItemsCitiesTo.AutoCompleteSuggestions;    
+                               PartialText ItemsCitiesTo.CurrentTextHint;            
+                               SelectedObject SelectedCityTo;                        
+                               Enabled IsAirportToExist" />
+            <RadioButton
+                android:text="One Way"
+                android:textColor="#2ECCFA"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_x="10dp"
+                android:layout_y="280dp"
+                local:MvxBind="Click SetOneWayCommand;                     
+                               Checked IsCheckedOneWay" />
+            <MvxDatePicker
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_x="70dp"
+                android:layout_y="250dp"
+                android:calendarViewShown="false"
+                local:MvxBind="Value DateOneWay" />
+            <RadioButton
+                android:text="Return"
+                android:textColor="#2ECCFA"
+                android:textSize="25sp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_x="10dp"
+                android:layout_y="380dp"
+                local:MvxBind="Click SetReturnCommand;                                   
+                               Checked IsCheckedReturn" />
+            <MvxDatePicker
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_x="70dp"
+                android:layout_y="350dp"
+                android:calendarViewShown="false"
+                local:MvxBind="Value DateReturn;
+                               Enabled IsEnabledDateReturn" />
+        </AbsoluteLayout>
+        <Button
+            android:text="Find flights"
+            android:textColor="#2ECCFA"
+            android:textSize="25sp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            local:MvxBind="Click FindFlightsCommand;  
+                                 Enabled IsDataAboutFlightExist" />
+    </LinearLayout>
+</ScrollView>
