@@ -40,7 +40,7 @@
       <Name>Flights.Infrastructure</Name>
     </ProjectReference>
     <ProjectReference Include="..\Flights.Models\Flights.Models.csproj">
-      <Project>{60C667CF-FC7B-4856-8865-A76DEEBB4EC0}</Project>
+      <Project>{D6E8FEC9-2089-4E7E-96DA-208E7CA7BC88}</Project>
       <Name>Flights.Models</Name>
     </ProjectReference>
   </ItemGroup>
