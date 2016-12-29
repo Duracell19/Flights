@@ -169,6 +169,7 @@
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
     <Compile Include="Converters\BoolToPictureValueConverter.cs" />
+    <Compile Include="Converters\BoolToVisibilityValueConverter.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

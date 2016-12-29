@@ -4,9 +4,28 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <MvvmCross.Binding.Droid.Views.MvxListView
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        local:MvxItemTemplate="@layout/flightslistitemsview"
-        local:MvxBind="ItemClick ShowFlightDetailsCommand;   ItemsSource FlightsList;" />
+        android:layout_height="wrap_content"
+        local:MvxBind="Visibility BoolToVisibility(IsLoading)">
+        <MvvmCross.Binding.Droid.Views.MvxListView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            local:MvxItemTemplate="@layout/flightslistitemsview"
+            local:MvxBind="ItemClick ShowFlightDetailsCommand;  ItemsSource FlightsList;" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="There are no flights"
+            android:textSize="18dp"
+            android:textColor="#FF959595"
+            local:MvxBind="Visibility BoolToVisibility(IsFlightsExist)" />
+    </LinearLayout>
+
+  <ProgressBar
+      style="?android:attr/progressBarStyleLarge"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"/>
 </LinearLayout>

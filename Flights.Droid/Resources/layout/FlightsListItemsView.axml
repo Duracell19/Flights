@@ -53,6 +53,6 @@
                 android:textColor="#FF959595"
                 android:textSize="15dp"
                 local:MvxBind="Text Arrival" />
-        </LinearLayout>     
+        </LinearLayout>
     </LinearLayout>
 </LinearLayout>

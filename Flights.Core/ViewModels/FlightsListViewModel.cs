@@ -3,6 +3,7 @@ using Flights.Models;
 using MvvmCross.Core.ViewModels;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -13,29 +14,30 @@ namespace Flights.Core.ViewModels
         private readonly IJsonConverter _jsonConverter;
         private readonly IFileStore _fileStore;
         private readonly IFlightsService _flightsService;
-        private FlyInfoShowModel _selectedItem;
+        private bool _isFlightsExist;
+        private bool _isLoading;
         private ObservableCollection<FlyInfoShowModel> _flightsList;
         private DataOfFlights _dataOfFlights;
 
         public ICommand ShowFlightDetailsCommand { get; set; }
 
-        private string _path;
-        public string Path
+        public bool IsFlightsExist
         {
-            get { return _path; }
+            get { return _isFlightsExist; }
             set
             {
-                _path = value;
-                RaisePropertyChanged(() => Path);
+                _isFlightsExist = value;
+                RaisePropertyChanged(() => IsFlightsExist);
             }
         }
-        public FlyInfoShowModel SelectedItem
+
+        public bool IsLoading
         {
-            get { return _selectedItem; }
+            get { return _isLoading; }
             set
             {
-                _selectedItem = value;
-                RaisePropertyChanged(() => SelectedItem);
+                _isLoading = value;
+                RaisePropertyChanged(() => IsLoading);
             }
         }
 
@@ -57,7 +59,6 @@ namespace Flights.Core.ViewModels
             _jsonConverter = jsonConverter;
             _flightsService = flightsService;
             _fileStore = fileStore;
-            _selectedItem = new FlyInfoShowModel();
             _flightsList = new ObservableCollection<FlyInfoShowModel>();
 
             ShowFlightDetailsCommand = new MvxCommand(ShowFlyDetails);
@@ -67,6 +68,7 @@ namespace Flights.Core.ViewModels
         {
             _dataOfFlights = _jsonConverter.Deserialize<DataOfFlights>(param);
             await ShowFlightsAsync();
+            IsFlightsExist = FlightsList.Any() ? false : true;
         }
 
         private void ShowFlyDetails()
@@ -76,6 +78,8 @@ namespace Flights.Core.ViewModels
 
         private async Task ShowFlightsAsync()
         {
+            IsLoading = true;
+
             await InitializeDataAsync(
                 _dataOfFlights.DateOneWay,
                 _dataOfFlights.IatasFrom,
@@ -89,6 +93,8 @@ namespace Flights.Core.ViewModels
                 _dataOfFlights.IatasFrom,
                 _dataOfFlights.ReturnWay);
             }
+
+            IsLoading = false;
         }
 
         private async Task InitializeDataAsync(string date, List<string> from, List<string> to, bool isReversed = false)
