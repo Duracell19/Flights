@@ -6,8 +6,7 @@
     android:layout_height="match_parent">
     <MvvmCross.Binding.Droid.Views.MvxListView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
         local:MvxItemTemplate="@layout/flightslistitemsview"
-        local:MvxBind="ItemClick ShowFlightDetailsCommand; 
-                       ItemsSource FlightsList;" />
+        local:MvxBind="ItemClick ShowFlightDetailsCommand;   ItemsSource FlightsList;" />
 </LinearLayout>

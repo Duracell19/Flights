@@ -1,54 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              xmlns:local="http://schemas.android.com/apk/res-auto"
-              android:orientation="horizontal"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-  <MvvmCross.Binding.Droid.Views.MvxImageView
-      android:layout_width="35dp"
-      android:layout_height="35dp"
-      local:MvxBind="src IsReservedFlight"/> 
-  <LinearLayout android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-    
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="horizontal">
-      <TextView android:layout_width="wrap_content"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <MvvmCross.Binding.Droid.Views.MvxImageView
+        android:layout_width="35dp"
+        android:layout_height="35dp"
+        local:MvxBind="DrawableId BoolToPicture(IsReservedFlight)" />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FF959595"
                 android:textSize="18dp"
-                local:MvxBind="Text From"/>
-      <MvvmCross.Binding.Droid.Views.MvxImageView
-        android:layout_width="13dp"
-        android:layout_height="13dp"
-        android:src="@drawable/direction"/>
-      <TextView android:layout_width="wrap_content"
+                local:MvxBind="Text From" />
+            <MvvmCross.Binding.Droid.Views.MvxImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:src="@drawable/direction" />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FF959595"
                 android:textSize="18dp"
-                local:MvxBind="Text To"/>
-    </LinearLayout>
-    
-    <LinearLayout android:layout_width="match_parent"
-                  android:layout_height="match_parent"
-                  android:orientation="horizontal">
-      <TextView android:layout_width="wrap_content"
+                local:MvxBind="Text To" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FF959595"
                 android:textSize="15dp"
-                local:MvxBind="Text Departure"/>
-      <MvvmCross.Binding.Droid.Views.MvxImageView
-        android:layout_width="13dp"
-        android:layout_height="13dp"
-        android:src="@drawable/direction"/>
-      <TextView android:layout_width="wrap_content"
+                local:MvxBind="Text Departure" />
+            <MvvmCross.Binding.Droid.Views.MvxImageView
+                android:layout_width="13dp"
+                android:layout_height="13dp"
+                android:src="@drawable/direction" />
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FF959595"
                 android:textSize="15dp"
-                local:MvxBind="Text Arrival"/>
+                local:MvxBind="Text Arrival" />
+        </LinearLayout>     
     </LinearLayout>
-    
-  </LinearLayout>
 </LinearLayout>

@@ -19,6 +19,16 @@ namespace Flights.Core.ViewModels
 
         public ICommand ShowFlightDetailsCommand { get; set; }
 
+        private string _path;
+        public string Path
+        {
+            get { return _path; }
+            set
+            {
+                _path = value;
+                RaisePropertyChanged(() => Path);
+            }
+        }
         public FlyInfoShowModel SelectedItem
         {
             get { return _selectedItem; }
