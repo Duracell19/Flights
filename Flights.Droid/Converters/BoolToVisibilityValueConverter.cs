@@ -9,7 +9,7 @@ namespace Flights.Droid.Converters
     {
         protected override MvxVisibility Convert(bool value, Type targetType, object parameter, CultureInfo culture)
         {
-            return value ? MvxVisibility.Visible : MvxVisibility.Collapsed;
+            return value ? MvxVisibility.Collapsed : MvxVisibility.Visible;
         }
     }
 }

@@ -68,7 +68,7 @@ namespace Flights.Core.ViewModels
         {
             _dataOfFlights = _jsonConverter.Deserialize<DataOfFlights>(param);
             await ShowFlightsAsync();
-            IsFlightsExist = FlightsList.Any() ? false : true;
+            IsFlightsExist = FlightsList.Any() ? true : false;
         }
 
         private void ShowFlyDetails()
