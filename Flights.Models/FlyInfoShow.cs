@@ -1,6 +1,6 @@
 ﻿namespace Flights.Models
 {
-    public class FlyInfoShowModel
+    public class FlyInfoShow
     {
         public string Arrival { get; set; }
         public string Duration { get; set; }

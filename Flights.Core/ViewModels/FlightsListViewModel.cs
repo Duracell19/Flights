@@ -16,7 +16,7 @@ namespace Flights.Core.ViewModels
         private readonly IFlightsService _flightsService;
         private bool _isFlightsExist;
         private bool _isLoading;
-        private ObservableCollection<FlyInfoShowModel> _flightsList;
+        private ObservableCollection<FlyInfoShow> _flightsList;
         private DataOfFlights _dataOfFlights;
 
         public ICommand ShowFlightDetailsCommand { get; set; }
@@ -41,7 +41,7 @@ namespace Flights.Core.ViewModels
             }
         }
 
-        public ObservableCollection<FlyInfoShowModel> FlightsList
+        public ObservableCollection<FlyInfoShow> FlightsList
         {
             get { return _flightsList; }
             set
@@ -59,7 +59,7 @@ namespace Flights.Core.ViewModels
             _jsonConverter = jsonConverter;
             _flightsService = flightsService;
             _fileStore = fileStore;
-            _flightsList = new ObservableCollection<FlyInfoShowModel>();
+            _flightsList = new ObservableCollection<FlyInfoShow>();
 
             ShowFlightDetailsCommand = new MvxCommand(ShowFlyDetails);
         }
@@ -73,7 +73,7 @@ namespace Flights.Core.ViewModels
 
         private void ShowFlyDetails()
         {
-
+            ShowViewModel<FlightsInfoViewModel>(FlightsList[0]);
         }
 
         private async Task ShowFlightsAsync()
@@ -111,9 +111,9 @@ namespace Flights.Core.ViewModels
             }
         }
 
-        private FlyInfoShowModel CreateFlyInfoShowModel(FlyInfo infoModel, bool isReversedFlight = false)
+        private FlyInfoShow CreateFlyInfoShowModel(FlyInfo infoModel, bool isReversedFlight = false)
         {
-            return new FlyInfoShowModel
+            return new FlyInfoShow
             {
                 Arrival = infoModel.Arrival,
                 Duration = infoModel.Duration,
