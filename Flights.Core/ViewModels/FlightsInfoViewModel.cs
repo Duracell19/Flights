@@ -5,16 +5,16 @@ namespace Flights.Core.ViewModels
 {
     public class FlightsInfoViewModel : MvxViewModel
     {
-        private FlyInfoShow infoFlyList;
+        private FlyInfoShow _infoFlyList;
 
         public FlyInfoShow InfoFlyList
         {
-            get { return infoFlyList; }
+            get { return _infoFlyList; }
         }
 
         public void Init(FlyInfoShow flightsItem)
         {
-            infoFlyList = flightsItem;
+            _infoFlyList = flightsItem;
         }
     }
 }

@@ -4,12 +4,198 @@
               android:orientation="vertical"
               android:layout_width="match_parent"
               android:layout_height="match_parent">
-
   <LinearLayout android:orientation="vertical"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent">
-    
-    
-    
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+    <LinearLayout  android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="Arrival terminal"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          android:layout_width="30dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.ArrivalTerminal)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="Carrier title"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+           android:layout_width="30dp"
+           android:layout_height="wrap_content"
+           android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.ThreadCarrierTitle)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="Vehicle"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          android:layout_width="30dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.ThreadVehicle)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="Number"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+           android:layout_width="30dp"
+           android:layout_height="wrap_content"
+           android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.ThreadNumber)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="Duration"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+           android:layout_width="30dp"
+           android:layout_height="wrap_content"
+           android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.Duration)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="Departure"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          android:layout_width="30dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.Departure)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="Arrival"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          android:layout_width="30dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.Arrival)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="From"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          android:layout_width="30dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.From)" />
+    </LinearLayout>
+
+    <LinearLayout  android:orientation="horizontal"
+                  android:layout_width="match_parent"
+                  android:layout_height="wrap_content">
+      <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="#FF959595"
+                android:textSize="18dp"
+                android:text="To"/>
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          android:layout_width="30dp"
+          android:layout_height="wrap_content"
+          android:src="@drawable/direction" />
+      <TextView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:textColor="#FF959595"
+          android:textSize="18dp"
+          local:MvxBind="Text StringToNotNullString(InfoFlyList.To)" />
+    </LinearLayout>
+
   </LinearLayout>
 </ScrollView>
