@@ -61,7 +61,7 @@ namespace Flights.Core.ViewModels
             _fileStore = fileStore;
             _flightsList = new ObservableCollection<FlyInfoShow>();
 
-            ShowFlightDetailsCommand = new MvxCommand(ShowFlyDetails);
+            ShowFlightDetailsCommand = new MvxCommand<object>(ShowFlyDetails);
         }
 
         public async Task Init(string param)
@@ -72,9 +72,13 @@ namespace Flights.Core.ViewModels
             IsFlightsExist = FlightsList.Any() ? true : false;
         }
 
-        private void ShowFlyDetails()
+        private void ShowFlyDetails(object arg)
         {
-            ShowViewModel<FlightsInfoViewModel>(FlightsList[0]);
+            if (arg is FlyInfoShow)
+            {
+                var item = (FlyInfoShow)arg;
+                ShowViewModel<FlightsInfoViewModel>(arg);
+            }
         }
 
         private async Task ShowFlightsAsync()
