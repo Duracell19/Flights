@@ -1,24 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-
+              xmlns:local="http://schemas.android.com/apk/res-auto"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:orientation="vertical">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        local:MvxBind="Visibility BoolToVisibility(IsLoading)">
         <MvvmCross.Binding.Droid.Views.MvxListView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             local:MvxItemTemplate="@layout/flightslistitemsview"
-            local:MvxBind="ItemClick ShowFlightDetailsCommand;  ItemsSource FlightsList;" />
+            local:MvxBind="ItemClick ShowFlightDetailsCommand; ItemsSource FlightsList;" />
         <TextView
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:gravity="center"
             android:text="There are no flights"
             android:textSize="18dp"
             android:textColor="#FF959595"
             local:MvxBind="Visibility BoolToVisibility(IsFlightsExist)" />
-
- 
+    </LinearLayout>
+  <ProgressBar
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      style="?android:attr/progressBarStyleLarge"
+      local:MvxBind="Visibility OppositeBoolToVisibility(IsFlightsExist)"/>
 </LinearLayout>

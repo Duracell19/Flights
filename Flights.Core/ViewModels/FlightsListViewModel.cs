@@ -66,6 +66,7 @@ namespace Flights.Core.ViewModels
 
         public async Task Init(string param)
         {
+            IsFlightsExist = true;
             _dataOfFlights = _jsonConverter.Deserialize<DataOfFlights>(param);
             await ShowFlightsAsync();
             IsFlightsExist = FlightsList.Any() ? true : false;
