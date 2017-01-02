@@ -32,7 +32,7 @@ namespace Flights.Core.ViewModels
             IFileStore fileStore)
         {
             _mainPageEntryViewModel = new MainPageEntryViewModel(httpService, jsonConverter, fileStore);
-            _mainPageFavoritesViewModel = new MainPageFavoritesViewModel();
+            _mainPageFavoritesViewModel = new MainPageFavoritesViewModel(jsonConverter, fileStore);
         }
     }
 }
