@@ -3558,8 +3558,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f06000c
 			public const int MvxBindingTagUnique = 2131099660;
 			
-			// aapt resource value: 0x7f060079
-			public const int action0 = 2131099769;
+			// aapt resource value: 0x7f06007a
+			public const int action0 = 2131099770;
 			
 			// aapt resource value: 0x7f06005c
 			public const int action_bar = 2131099740;
@@ -3585,8 +3585,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f06005d
 			public const int action_context_bar = 2131099741;
 			
-			// aapt resource value: 0x7f06007d
-			public const int action_divider = 2131099773;
+			// aapt resource value: 0x7f06007e
+			public const int action_divider = 2131099774;
 			
 			// aapt resource value: 0x7f060003
 			public const int action_menu_divider = 2131099651;
@@ -3621,8 +3621,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f060046
 			public const int buttonPanel = 2131099718;
 			
-			// aapt resource value: 0x7f06007a
-			public const int cancel_action = 2131099770;
+			// aapt resource value: 0x7f06007b
+			public const int cancel_action = 2131099771;
 			
 			// aapt resource value: 0x7f06002d
 			public const int center = 2131099693;
@@ -3636,8 +3636,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f060054
 			public const int checkbox = 2131099732;
 			
-			// aapt resource value: 0x7f060080
-			public const int chronometer = 2131099776;
+			// aapt resource value: 0x7f060081
+			public const int chronometer = 2131099777;
 			
 			// aapt resource value: 0x7f060035
 			public const int clip_horizontal = 2131099701;
@@ -3687,8 +3687,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f06001e
 			public const int end = 2131099678;
 			
-			// aapt resource value: 0x7f060085
-			public const int end_padder = 2131099781;
+			// aapt resource value: 0x7f060086
+			public const int end_padder = 2131099782;
 			
 			// aapt resource value: 0x7f060025
 			public const int enterAlways = 2131099685;
@@ -3704,6 +3704,9 @@ namespace Flights.Droid
 			
 			// aapt resource value: 0x7f060053
 			public const int expanded_menu = 2131099731;
+			
+			// aapt resource value: 0x7f060078
+			public const int favoriteList = 2131099768;
 			
 			// aapt resource value: 0x7f060037
 			public const int fill = 2131099703;
@@ -3732,8 +3735,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f060041
 			public const int image = 2131099713;
 			
-			// aapt resource value: 0x7f060084
-			public const int info = 2131099780;
+			// aapt resource value: 0x7f060085
+			public const int info = 2131099781;
 			
 			// aapt resource value: 0x7f060000
 			public const int item_touch_helper_previous_elevation = 2131099648;
@@ -3741,11 +3744,11 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f060031
 			public const int left = 2131099697;
 			
-			// aapt resource value: 0x7f06007e
-			public const int line1 = 2131099774;
+			// aapt resource value: 0x7f06007f
+			public const int line1 = 2131099775;
 			
-			// aapt resource value: 0x7f060082
-			public const int line3 = 2131099778;
+			// aapt resource value: 0x7f060083
+			public const int line3 = 2131099779;
 			
 			// aapt resource value: 0x7f06000d
 			public const int listMode = 2131099661;
@@ -3762,8 +3765,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f060077
 			public const int loadingProgressWheel = 2131099767;
 			
-			// aapt resource value: 0x7f06007c
-			public const int media_actions = 2131099772;
+			// aapt resource value: 0x7f06007d
+			public const int media_actions = 2131099773;
 			
 			// aapt resource value: 0x7f06001f
 			public const int middle = 2131099679;
@@ -3795,6 +3798,9 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f06002b
 			public const int pin = 2131099691;
 			
+			// aapt resource value: 0x7f060087
+			public const int pm_delete = 2131099783;
+			
 			// aapt resource value: 0x7f060006
 			public const int progress_circular = 2131099654;
 			
@@ -3825,8 +3831,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f06003b
 			public const int scrollable = 2131099707;
 			
-			// aapt resource value: 0x7f060078
-			public const int searchImageButton = 2131099768;
+			// aapt resource value: 0x7f060079
+			public const int searchImageButton = 2131099769;
 			
 			// aapt resource value: 0x7f060060
 			public const int search_badge = 2131099744;
@@ -3900,8 +3906,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f060033
 			public const int start = 2131099699;
 			
-			// aapt resource value: 0x7f06007b
-			public const int status_bar_latest_event_content = 2131099771;
+			// aapt resource value: 0x7f06007c
+			public const int status_bar_latest_event_content = 2131099772;
 			
 			// aapt resource value: 0x7f060067
 			public const int submit_area = 2131099751;
@@ -3909,11 +3915,11 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f06000f
 			public const int tabMode = 2131099663;
 			
-			// aapt resource value: 0x7f060083
-			public const int text = 2131099779;
+			// aapt resource value: 0x7f060084
+			public const int text = 2131099780;
 			
-			// aapt resource value: 0x7f060081
-			public const int text2 = 2131099777;
+			// aapt resource value: 0x7f060082
+			public const int text2 = 2131099778;
 			
 			// aapt resource value: 0x7f06004f
 			public const int textSpacerNoButtons = 2131099727;
@@ -3921,8 +3927,8 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f060075
 			public const int textViewStatus = 2131099765;
 			
-			// aapt resource value: 0x7f06007f
-			public const int time = 2131099775;
+			// aapt resource value: 0x7f060080
+			public const int time = 2131099776;
 			
 			// aapt resource value: 0x7f060045
 			public const int title = 2131099717;
@@ -4190,6 +4196,22 @@ namespace Flights.Droid
 			}
 			
 			private Layout()
+			{
+			}
+		}
+		
+		public partial class Menu
+		{
+			
+			// aapt resource value: 0x7f0c0000
+			public const int flate_menu = 2131492864;
+			
+			static Menu()
+			{
+				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
+			}
+			
+			private Menu()
 			{
 			}
 		}

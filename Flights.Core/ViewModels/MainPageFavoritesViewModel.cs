@@ -12,7 +12,6 @@ namespace Flights.Core.ViewModels
         private readonly IFileStore _fileStore;
         public ObservableCollection<Favorite> FavoriteList { get; set; }
 
-
         public MainPageFavoritesViewModel(IJsonConverter jsonConverter, IFileStore fileStore)
         {
             _jsonConverter = jsonConverter;
