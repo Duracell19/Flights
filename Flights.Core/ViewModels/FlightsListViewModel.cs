@@ -1,4 +1,5 @@
-﻿using Flights.Infrastructure.Interfaces;
+﻿using Flights.Infrastructure;
+using Flights.Infrastructure.Interfaces;
 using Flights.Models;
 using Flights.Services.Helpers;
 using MvvmCross.Core.ViewModels;
@@ -17,11 +18,14 @@ namespace Flights.Core.ViewModels
         private readonly IFileStore _fileStore;
         private bool _isFlightsExist;
         private bool _isLoading;
+        private bool _isFlightAlreadyInFavorite;
+        private ObservableCollection<Favorite> _favoriteList;
         private ObservableCollection<FlyInfoShow> _flightsList;
         private DataOfFlights _dataOfFlights;
 
         public ICommand ShowFlightDetailsCommand { get; set; }
-
+        public ICommand AddToFavoritesCommand { get; set; }
+        
         public bool IsFlightsExist
         {
             get { return _isFlightsExist; }
@@ -39,6 +43,16 @@ namespace Flights.Core.ViewModels
             {
                 _isLoading = value;
                 RaisePropertyChanged(() => IsLoading);
+            }
+        }
+
+        public bool IsFlightAlreadyInFavorite
+        {
+            get { return _isFlightAlreadyInFavorite; }
+            set
+            {
+                _isFlightAlreadyInFavorite = value;
+                RaisePropertyChanged(() => IsFlightAlreadyInFavorite);
             }
         }
 
@@ -62,6 +76,7 @@ namespace Flights.Core.ViewModels
             _fileStore = fileStore;
             _flightsList = new ObservableCollection<FlyInfoShow>();
 
+            AddToFavoritesCommand = new MvxCommand(AddToFavorites);
             ShowFlightDetailsCommand = new MvxCommand<object>(ShowFlyDetails);
         }
 
@@ -69,8 +84,17 @@ namespace Flights.Core.ViewModels
         {
             IsFlightsExist = true;
             _dataOfFlights = _jsonConverter.Deserialize<DataOfFlights>(param);
+            _favoriteList = _fileStore.Load<ObservableCollection<Favorite>>(Defines.FAVORITE_LIST_FILE_NAME);
+            _favoriteList = _favoriteList ?? new ObservableCollection<Favorite>();
             await ShowFlightsAsync();
             IsFlightsExist = FlightsList.Any() ? true : false;
+        }
+
+        private void AddToFavorites()
+        {
+            AddFavorite();
+            _fileStore.Save(Defines.FAVORITE_LIST_FILE_NAME, _favoriteList);
+            IsFlightAlreadyInFavorite = true;
         }
 
         private void ShowFlyDetails(object arg)
@@ -80,6 +104,21 @@ namespace Flights.Core.ViewModels
                 var item = (FlyInfoShow)arg;
                 ShowViewModel<FlightsInfoViewModel>(arg);
             }
+        }
+
+        private void AddFavorite()
+        {
+            _favoriteList.Add(new Favorite
+            {
+                CitiesFrom = _dataOfFlights.CitiesFrom,
+                CitiesTo = _dataOfFlights.CitiesTo,
+                CityFrom = _dataOfFlights.CityFrom,
+                CityTo = _dataOfFlights.CityTo,
+                CountryFrom = _dataOfFlights.CountryFrom,
+                CountryTo = _dataOfFlights.CountryTo,
+                IataFrom = _dataOfFlights.IatasFrom,
+                IataTo = _dataOfFlights.IatasTo
+            });
         }
 
         private async Task ShowFlightsAsync()
@@ -100,6 +139,7 @@ namespace Flights.Core.ViewModels
                 _dataOfFlights.ReturnWay);
             }
 
+            IsFlightAlreadyInFavorite = _favoriteList.Any(IsFlightEqualOfFavorite);
             IsLoading = false;
         }
 
@@ -133,6 +173,12 @@ namespace Flights.Core.ViewModels
                 To = infoModel.To,
                 IsReservedFlight = isReversedFlight
             };
+        }
+
+        private bool IsFlightEqualOfFavorite(Favorite model)
+        {
+            return model.CountryFrom == _dataOfFlights.CountryFrom && model.CityFrom == _dataOfFlights.CityFrom
+                   && model.CountryTo == _dataOfFlights.CountryTo && model.CityTo == _dataOfFlights.CityTo;
         }
     }
 }

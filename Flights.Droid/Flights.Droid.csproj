@@ -168,9 +168,11 @@
   <ItemGroup>
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
     <Compile Include="Bootstrap\JsonPluginBootstrap.cs" />
+    <Compile Include="Converters\BoolToFavoritePictureValueConverter.cs" />
     <Compile Include="Converters\BoolToPictureValueConverter.cs" />
     <Compile Include="Converters\BoolToVisibilityValueConverter.cs" />
     <Compile Include="Converters\OppositeBoolToVisibilityValueConverter.cs" />
+    <Compile Include="Converters\OppositeValueConverter.cs" />
     <Compile Include="Converters\StringToNotNullStringValueConverter.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
@@ -208,6 +210,9 @@
     <AndroidResource Include="Resources\layout\FlightsInfoView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout\FlightsListToolbar.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -240,7 +245,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\fly_return.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\InFavorite.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\NotInFavorite.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\packages\Xamarin.Android.Support.Vector.Drawable.23.4.0.1\build\Xamarin.Android.Support.Vector.Drawable.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
