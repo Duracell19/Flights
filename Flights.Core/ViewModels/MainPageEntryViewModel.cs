@@ -13,10 +13,9 @@ namespace Flights.Core.ViewModels
 {
     public class MainPageEntryViewModel : MvxViewModel
     {
+        private readonly IHttpService _httpService;
         private readonly IJsonConverter _jsonConverter;
         private readonly IFileStore _fileStore;
-        private readonly ICitiesService _citiesService;
-        private readonly IIataService _iataService;
         private AutoCompleteTextViewHelper _itemsCountriesFrom;
         private AutoCompleteTextViewHelper _itemsCountriesTo;
         private AutoCompleteTextViewHelper _itemsCitiesFrom;
@@ -203,15 +202,13 @@ namespace Flights.Core.ViewModels
         public ICommand SetOneWayCommand { get; set; }
         public ICommand SetReturnCommand { get; set; }
 
-        public MainPageEntryViewModel(IJsonConverter jsonConverter, 
-            IFileStore fileStore,
-            ICitiesService citiesService,
-            IIataService iataService)
+        public MainPageEntryViewModel(IHttpService httpService,
+            IJsonConverter jsonConverter, 
+            IFileStore fileStore)
         {
+            _httpService = httpService;
             _jsonConverter = jsonConverter;
             _fileStore = fileStore;
-            _citiesService = citiesService;
-            _iataService = iataService;
             _dataOfFlights = new DataOfFlights();
             _itemsCountriesFrom = new AutoCompleteTextViewHelper();
             _itemsCountriesTo = new AutoCompleteTextViewHelper();
@@ -272,9 +269,10 @@ namespace Flights.Core.ViewModels
 
         private async Task SetCitiesFromAsync()
         {
+            var citiesService = new CitiesService(_httpService, _jsonConverter);
             _dataOfFlights.CountryFrom = SelectedCountryFrom;
-            var citiesFrom = await _citiesService.GetCitiesAsync(SelectedCountryFrom);
-
+            var citiesFrom = await citiesService.GetCitiesAsync(SelectedCountryFrom);
+        
             if (citiesFrom != null)
             {
                 ItemsCitiesFrom.AutoCompleteList.Clear();
@@ -294,8 +292,9 @@ namespace Flights.Core.ViewModels
 
         private async Task SetCitiesToAsync()
         {
+            var citiesService = new CitiesService(_httpService, _jsonConverter);
             _dataOfFlights.CountryTo = SelectedCountryTo;
-            var citiesTo = await _citiesService.GetCitiesAsync(SelectedCountryTo);
+            var citiesTo = await citiesService.GetCitiesAsync(SelectedCountryTo);
 
             if (citiesTo != null)
             {
@@ -316,16 +315,18 @@ namespace Flights.Core.ViewModels
 
         private async Task SetIatasFromAsync()
         {
+            var iataService = new IataService(_httpService, _jsonConverter);
             _dataOfFlights.CityFrom = SelectedCityFrom;
-            var iatasFrom = await _iataService.GetIataAsync(SelectedCityFrom);
+            var iatasFrom = await iataService.GetIataAsync(SelectedCityFrom);
             _dataOfFlights.IatasFrom = iatasFrom;
             IsDataAboutFlightExist = (IsDataAboutFlightExistCheck()) ? true : false;
         }
 
         private async Task SetIatasToAsync()
         {
+            var iataService = new IataService(_httpService, _jsonConverter);
             _dataOfFlights.CityTo = SelectedCityTo;
-            var iatasTo = await _iataService.GetIataAsync(SelectedCityTo);
+            var iatasTo = await iataService.GetIataAsync(SelectedCityTo);
             _dataOfFlights.IatasTo = iatasTo;
             IsDataAboutFlightExist = (IsDataAboutFlightExistCheck()) ? true : false;
         }

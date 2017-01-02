@@ -3,9 +3,9 @@ using Flights.Services.DataModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace Flights.Services
+namespace Flights.Services.Helpers
 {
-    public class IataService : IIataService
+    public class IataService
     {
         readonly IHttpService _httpService;
         readonly IJsonConverter _jsonConverter;

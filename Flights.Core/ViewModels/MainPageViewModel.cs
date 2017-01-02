@@ -27,12 +27,11 @@ namespace Flights.Core.ViewModels
             }
         }
 
-        public MainPageViewModel(IJsonConverter jsonConverter,
-            IFileStore fileStore,
-            ICitiesService citiesService,
-            IIataService iataService)
+        public MainPageViewModel(IHttpService httpService,
+            IJsonConverter jsonConverter,
+            IFileStore fileStore)
         {
-            _mainPageEntryViewModel = new MainPageEntryViewModel(jsonConverter, fileStore, citiesService, iataService);
+            _mainPageEntryViewModel = new MainPageEntryViewModel(httpService, jsonConverter, fileStore);
             _mainPageFavoritesViewModel = new MainPageFavoritesViewModel();
         }
     }

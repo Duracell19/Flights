@@ -20,9 +20,6 @@ namespace Flights.Core
             Mvx.RegisterType<IHttpService, HttpService>();
             Mvx.RegisterType<IJsonConverter, JsonConverter>();
             Mvx.RegisterType<IFileStore, FileStore>();
-            Mvx.RegisterType<ICitiesService, CitiesService>();
-            Mvx.RegisterType<IIataService, IataService>();
-            Mvx.RegisterType<IFlightsService, FlightsService>();
 
             Mvx.RegisterSingleton(() => UserDialogs.Instance);
 

@@ -1,5 +1,6 @@
 ﻿using Flights.Infrastructure.Interfaces;
 using Flights.Models;
+using Flights.Services.Helpers;
 using MvvmCross.Core.ViewModels;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -11,9 +12,9 @@ namespace Flights.Core.ViewModels
 {
     public class FlightsListViewModel : MvxViewModel
     {
+        private readonly IHttpService _httpService;
         private readonly IJsonConverter _jsonConverter;
         private readonly IFileStore _fileStore;
-        private readonly IFlightsService _flightsService;
         private bool _isFlightsExist;
         private bool _isLoading;
         private ObservableCollection<FlyInfoShow> _flightsList;
@@ -54,10 +55,10 @@ namespace Flights.Core.ViewModels
         public FlightsListViewModel(
             IJsonConverter jsonConverter,
             IFileStore fileStore,
-            IFlightsService flightsService)
+            IHttpService httpService)
         {
+            _httpService = httpService;
             _jsonConverter = jsonConverter;
-            _flightsService = flightsService;
             _fileStore = fileStore;
             _flightsList = new ObservableCollection<FlyInfoShow>();
 
@@ -104,7 +105,8 @@ namespace Flights.Core.ViewModels
 
         private async Task InitializeDataAsync(string date, List<string> from, List<string> to, bool isReversed = false)
         {
-            var flyInfoOneWay = await _flightsService.ConfigurationOfFlightsAsync(date, from, to);
+            var flightsService = new FlightsService(_httpService, _jsonConverter);
+            var flyInfoOneWay = await flightsService.ConfigurationOfFlightsAsync(date, from, to);
             AddToFlightsList(flyInfoOneWay, isReversed);
         }
 

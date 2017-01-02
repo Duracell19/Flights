@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Flights.Services
+namespace Flights.Services.Helpers
 {
-    public class CitiesService : ICitiesService
+    public class CitiesService 
     {
         private readonly IHttpService _httpService;
         private readonly IJsonConverter _jsonConverter;

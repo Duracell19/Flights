@@ -45,7 +45,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CitiesService.cs" />
+    <Compile Include="Helpers\CitiesService.cs" />
     <Compile Include="DataModels\AirportInfo.cs" />
     <Compile Include="DataModels\CarrierInfo.cs" />
     <Compile Include="DataModels\FlightInfo.cs" />
@@ -55,10 +55,10 @@
     <Compile Include="DataModels\ToInfo.cs" />
     <Compile Include="DataModels\Value.cs" />
     <Compile Include="FileStore.cs" />
-    <Compile Include="FlightsService.cs" />
+    <Compile Include="Helpers\FlightsService.cs" />
     <Compile Include="Helpers\Countries.cs" />
     <Compile Include="HttpService.cs" />
-    <Compile Include="IataService.cs" />
+    <Compile Include="Helpers\IataService.cs" />
     <Compile Include="JsonConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
