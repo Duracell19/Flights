@@ -3,9 +3,37 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+  <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_x="0dp"
+    android:layout_y="0dp"
+    android:orientation="vertical"
+    local:MvxBind="Visibility BoolToVisibility(IsLoading)">
 
-  <include layout="@layout/FlightsListToolbar" />
-
-  
-  
+    <include layout="@layout/FlightsListToolbar" />
+    
+    <MvvmCross.Binding.Droid.Views.MvxListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        local:MvxItemTemplate="@layout/flightslistitemsview"
+        local:MvxBind="ItemClick ShowFlightDetailsCommand; ItemsSource FlightsList;" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="There are no flights"
+        android:textSize="18dp"
+        android:textColor="#FF959595"
+        local:MvxBind="Visibility BoolToVisibility(IsFlightsExist)" />
+  </LinearLayout>
+  <RelativeLayout android:layout_width="match_parent"
+                  android:layout_height="match_parent">
+    <ProgressBar android:layout_width="wrap_content"
+                 android:layout_height="wrap_content"
+                 android:layout_centerHorizontal="true"
+                 android:layout_centerVertical="true"
+                 android:layout_centerInParent="true"
+                 style="?android:attr/progressBarStyleLarge"
+                 local:MvxBind="Visibility OppositeBoolToVisibility(IsLoading)" />
+  </RelativeLayout>
 </AbsoluteLayout>
