@@ -12,22 +12,14 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
-                android:text="@string/arrival_terminal" />
-            <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
-                local:MvxBind="Text StringToNotNullString(InfoFlyList.ArrivalTerminal)" />
+          <TextView
+            style="@style/textFirstLineInListStyle"
+            android:text="@string/arrival_terminal" />
+          <MvvmCross.Binding.Droid.Views.MvxImageView
+            style="@style/imageDirectionStyle"/>
+          <TextView
+            style="@style/textFirstLineInListStyle"
+            local:MvxBind="Text StringToNotNullString(InfoFlyList.ArrivalTerminal)" />
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
@@ -37,21 +29,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
-                android:text="@string/carrier_title" />
+              style="@style/textFirstLineInListStyle"
+              android:text="@string/carrier_title" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
-                local:MvxBind="Text StringToNotNullString(InfoFlyList.ThreadCarrierTitle)" />
+                style="@style/imageDirectionStyle"/>
+          <TextView
+            style="@style/textFirstLineInListStyle"
+            local:MvxBind="Text StringToNotNullString(InfoFlyList.ThreadCarrierTitle)" />
         </LinearLayout>
         <TextView
             android:layout_width="match_parent"
@@ -61,20 +45,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
-                android:text="@string/vehicle" />
+               style="@style/textFirstLineInListStyle"
+               android:text="@string/vehicle" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text StringToNotNullString(InfoFlyList.ThreadVehicle)" />
         </LinearLayout>
         <TextView
@@ -85,20 +61,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 android:text="@string/number" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text StringToNotNullString(InfoFlyList.ThreadNumber)" />
         </LinearLayout>
         <TextView
@@ -109,20 +77,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 android:text="@string/duration" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text StringToNotNullString(InfoFlyList.Duration)" />
         </LinearLayout>
         <TextView
@@ -133,20 +93,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 android:text="@string/departure" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text StringToNotNullString(InfoFlyList.Departure)" />
         </LinearLayout>
         <TextView
@@ -157,20 +109,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 android:text="@string/arrival" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text StringToNotNullString(InfoFlyList.Arrival)" />
         </LinearLayout>
         <TextView
@@ -181,20 +125,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 android:text="@string/from" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text StringToNotNullString(InfoFlyList.From)" />
         </LinearLayout>
         <TextView
@@ -205,20 +141,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 android:text="@string/to" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="30dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle"/>
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text StringToNotNullString(InfoFlyList.To)" />
         </LinearLayout>
     </LinearLayout>

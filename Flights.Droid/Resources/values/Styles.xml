@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <style name="textFromStyle">
+    <item name="android:text">@string/from</item>
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">#2ECCFA</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">10dp</item>
+    <item name="android:layout_y">70dp</item>
+  </style>
+
+  <style name="autoCompleteTextCountryFromStyle">
+    <item name="android:hint">@string/choose_country</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">90dp</item>
+    <item name="android:layout_y">30dp</item>
+  </style>
+
+  <style name="autoCompleteTextCityFromStyle">
+    <item name="android:hint">@string/choose_city</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">90dp</item>
+    <item name="android:layout_y">80dp</item>
+  </style>
+
+  <style name="textToStyle">
+    <item name="android:text">@string/to</item>
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">#2ECCFA</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">10dp</item>
+    <item name="android:layout_y">170dp</item>
+  </style>
+
+  <style name="autoCompleteTextCountryToStyle">
+    <item name="android:hint">@string/choose_country</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">90dp</item>
+    <item name="android:layout_y">130dp</item>
+  </style>
+
+  <style name="autoCompleteTextCityToStyle">
+    <item name="android:hint">@string/choose_city</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">90dp</item>
+    <item name="android:layout_y">180dp</item>
+  </style>
+
+  <style name="radioButtonOneWayStyle">
+    <item name="android:text">@string/one_way</item>
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">#2ECCFA</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">10dp</item>
+    <item name="android:layout_y">280dp</item>
+  </style>
+
+  <style name="mvxDatePickerOneWayStyle">
+    <item name="android:calendarViewShown">false</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">100dp</item>
+    <item name="android:layout_x">70dp</item>
+    <item name="android:layout_y">250dp</item>
+  </style>
+
+  <style name="radioButtonReturnStyle">
+    <item name="android:text">@string/return_way</item>
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">#2ECCFA</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_x">10dp</item>
+    <item name="android:layout_y">380dp</item>
+  </style>
+
+  <style name="mvxDatePickerReturnStyle">
+    <item name="android:calendarViewShown">false</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">100dp</item>
+    <item name="android:layout_x">70dp</item>
+    <item name="android:layout_y">350dp</item>
+  </style>
+  
+  <style name="buttonFindStyle">
+    <item name="android:text">@string/find_flights</item>
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">#2ECCFA</item>
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="textFirstLineInListStyle">
+    <item name="android:textSize">18dp</item>
+    <item name="android:textColor">#FF959595</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="imageDirectionStyle">
+    <item name="android:src">@drawable/direction</item>
+    <item name="android:layout_width">13dp</item>
+    <item name="android:layout_height">13dp</item>
+  </style>
+
+  <style name="imageFavoriteStyle">
+    <item name="android:src">@drawable/favorite</item>
+    <item name="android:layout_width">35dp</item>
+    <item name="android:layout_height">35dp</item>
+  </style>
+
+  <style name="textSecondLineInListStyle">
+    <item name="android:textSize">15dp</item>
+    <item name="android:textColor">#FF959595</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style name="textNoFlightsStyle">
+    <item name="android:text">@string/no_flights</item>
+    <item name="android:textSize">18dp</item>
+    <item name="android:textColor">#FF959595</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">match_parent</item>
+  </style>
+
+  <style name="imageButtonFavoriteStyle">
+    <item name="android:layout_gravity">center</item>
+    <item name="android:background">@android:color/holo_blue_light</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+  
+  
+  
+</resources>

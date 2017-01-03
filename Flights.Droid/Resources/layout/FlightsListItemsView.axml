@@ -17,20 +17,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text From" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle" />
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
+                style="@style/textFirstLineInListStyle"
                 local:MvxBind="Text To" />
         </LinearLayout>
         <LinearLayout
@@ -38,20 +30,12 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="15dp"
+                style="@style/textSecondLineInListStyle"
                 local:MvxBind="Text Departure" />
             <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:src="@drawable/direction" />
+                style="@style/imageDirectionStyle" />
             <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="15dp"
+                style="@style/textSecondLineInListStyle"
                 local:MvxBind="Text Arrival" />
         </LinearLayout>
     </LinearLayout>

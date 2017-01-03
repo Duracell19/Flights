@@ -4,55 +4,37 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <MvvmCross.Binding.Droid.Views.MvxImageView
-        android:layout_width="35dp"
-        android:layout_height="35dp"
-        android:src="@drawable/favorite" />
+  <MvvmCross.Binding.Droid.Views.MvxImageView
+    style="@style/imageFavoriteStyle"/>
+  <LinearLayout
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
-                local:MvxBind="Text CountryFrom" />
-            <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:src="@drawable/direction" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="18dp"
-                local:MvxBind="Text CountryTo" />
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="15dp"
-                local:MvxBind="Text CityFrom" />
-            <MvvmCross.Binding.Droid.Views.MvxImageView
-                android:layout_width="13dp"
-                android:layout_height="13dp"
-                android:src="@drawable/direction" />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="#FF959595"
-                android:textSize="15dp"
-                local:MvxBind="Text CityTo" />
-        </LinearLayout>
+        android:orientation="horizontal">
+      <TextView
+          style="@style/textFirstLineInListStyle"
+          local:MvxBind="Text CountryFrom" />
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          style="@style/imageDirectionStyle" />
+      <TextView
+          style="@style/textFirstLineInListStyle"
+          local:MvxBind="Text CountryTo" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+      <TextView
+          style="@style/textSecondLineInListStyle"
+          local:MvxBind="Text CityFrom" />
+      <MvvmCross.Binding.Droid.Views.MvxImageView
+          style="@style/imageDirectionStyle" />
+      <TextView
+          style="@style/textSecondLineInListStyle"
+          local:MvxBind="Text CityTo" />
+    </LinearLayout>
+  </LinearLayout>
 </LinearLayout>

@@ -5393,6 +5393,57 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f090156
 			public const int Widget_Design_TextInputLayout = 2131296598;
 			
+			// aapt resource value: 0x7f090159
+			public const int autoCompleteTextCityFromStyle = 2131296601;
+			
+			// aapt resource value: 0x7f09015c
+			public const int autoCompleteTextCityToStyle = 2131296604;
+			
+			// aapt resource value: 0x7f090158
+			public const int autoCompleteTextCountryFromStyle = 2131296600;
+			
+			// aapt resource value: 0x7f09015b
+			public const int autoCompleteTextCountryToStyle = 2131296603;
+			
+			// aapt resource value: 0x7f090161
+			public const int buttonFindStyle = 2131296609;
+			
+			// aapt resource value: 0x7f090167
+			public const int imageButtonFavoriteStyle = 2131296615;
+			
+			// aapt resource value: 0x7f090163
+			public const int imageDirectionStyle = 2131296611;
+			
+			// aapt resource value: 0x7f090164
+			public const int imageFavoriteStyle = 2131296612;
+			
+			// aapt resource value: 0x7f09015e
+			public const int mvxDatePickerOneWayStyle = 2131296606;
+			
+			// aapt resource value: 0x7f090160
+			public const int mvxDatePickerReturnStyle = 2131296608;
+			
+			// aapt resource value: 0x7f09015d
+			public const int radioButtonOneWayStyle = 2131296605;
+			
+			// aapt resource value: 0x7f09015f
+			public const int radioButtonReturnStyle = 2131296607;
+			
+			// aapt resource value: 0x7f090162
+			public const int textFirstLineInListStyle = 2131296610;
+			
+			// aapt resource value: 0x7f090157
+			public const int textFromStyle = 2131296599;
+			
+			// aapt resource value: 0x7f090166
+			public const int textNoFlightsStyle = 2131296614;
+			
+			// aapt resource value: 0x7f090165
+			public const int textSecondLineInListStyle = 2131296613;
+			
+			// aapt resource value: 0x7f09015a
+			public const int textToStyle = 2131296602;
+			
 			static Style()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();

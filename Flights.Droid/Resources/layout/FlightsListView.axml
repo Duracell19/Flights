@@ -18,11 +18,7 @@
             local:MvxItemTemplate="@layout/flightslistitemsview"
             local:MvxBind="ItemClick ShowFlightDetailsCommand; ItemsSource FlightsList;" />
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:text="@string/no_flights"
-            android:textSize="18dp"
-            android:textColor="#FF959595"
+            style="@style/textNoFlightsStyle"
             local:MvxBind="Visibility BoolToVisibility(IsFlightsExist)" />
     </LinearLayout>
     <RelativeLayout
