@@ -18,4 +18,5 @@
   <string name="favorites">Favorites</string>
   <string name="choose_country">Choose country</string>
   <string name="choose_city">Choose city</string>
-  </resources>
+  <string name="about">The application is designed for viewing the list of flights. Data provided by the service Yandex.Schedules. Url: http://rasp.yandex.ru/ </string> 
+</resources>

@@ -135,5 +135,14 @@
     <item name="android:layout_width">wrap_content</item>
     <item name="android:layout_height">wrap_content</item>
   </style>
+
+  <style name="textAboutStyle">
+    <item name="android:text">@string/about</item>
+    <item name="android:textSize">25sp</item>
+    <item name="android:textColor">#2ECCFA</item>
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:gravity">center</item>
+  </style>
   
 </resources>

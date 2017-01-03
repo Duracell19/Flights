@@ -18,4 +18,5 @@
   <string name="favorites">Избранные</string>
   <string name="choose_country">Выберите страну</string>
   <string name="choose_city">Выберите город</string>
+  <string name="about">Приложение разработана для просмотра списка рейсов. Данные взяты из сервиса Yandex.Schedules. Url: http://rasp.yandex.ru/ </string>
 </resources>

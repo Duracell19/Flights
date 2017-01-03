@@ -6,8 +6,6 @@ using Flights.Services.Helpers;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -216,7 +214,7 @@ namespace Flights.Core.ViewModels
             _itemsCountriesTo = new AutoCompleteTextViewHelper();
             _itemsCitiesFrom = new AutoCompleteTextViewHelper();
             _itemsCitiesTo = new AutoCompleteTextViewHelper();
-
+            
             FindFlightsCommand = new MvxCommand(FindFlights);
             SetOneWayCommand = new MvxCommand(SetOneWay);
             SetReturnCommand = new MvxCommand(SetReturn);
@@ -226,7 +224,7 @@ namespace Flights.Core.ViewModels
 
         public void Init(Favorite arg)
         {
-                        
+                         
         }
 
         public void Initialization()

@@ -4,8 +4,13 @@
     android:background="#800080"
     android:layout_width="match_parent"
     android:layout_height="45dp">
+    <ImageButton
+        android:background="#800080"
+        style="@style/imageButtonFavoriteStyle"
+        local:MvxBind="Click AddToFavoritesCommand; Enabled Opposite(IsFlightAlreadyInFavorite); DrawableId BoolToFavoritePicture(IsFlightAlreadyInFavorite);" />
   <ImageButton
-    android:background="#800080"
-    style="@style/imageButtonFavoriteStyle"
-    local:MvxBind="Click AddToFavoritesCommand; Enabled Opposite(IsFlightAlreadyInFavorite); DrawableId BoolToFavoritePicture(IsFlightAlreadyInFavorite);" />
+        android:background="#800080"
+        android:src="@drawable/about"
+        style="@style/imageButtonFavoriteStyle"
+        local:MvxBind="Click ShowInfoAboutFlights;" />
 </android.support.v7.widget.Toolbar>

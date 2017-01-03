@@ -4,9 +4,14 @@
     android:background="#b71919"
     android:layout_width="match_parent"
     android:layout_height="45dp">
+    <ImageButton
+        android:background="#b71919"
+        android:src="@drawable/refresh"
+        style="@style/imageButtonFavoriteStyle"
+        local:MvxBind="Click RefreshCommand;" />
   <ImageButton
-    android:background="#b71919"
-    android:src="@drawable/refresh"
-    style="@style/imageButtonFavoriteStyle"
-    local:MvxBind="Click RefreshCommand;"/>
+        android:background="#b71919"
+        android:src="@drawable/about"
+        style="@style/imageButtonFavoriteStyle"
+        local:MvxBind="Click ShowInfoAboutFlights;" />
 </android.support.v7.widget.Toolbar>

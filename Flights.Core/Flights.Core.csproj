@@ -37,6 +37,7 @@
     <Compile Include="App.cs" />
     <Compile Include="Helpers\AutoCompleteTextViewHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AboutFlightsViewModel.cs" />
     <Compile Include="ViewModels\FlightsInfoViewModel.cs" />
     <Compile Include="ViewModels\FlightsListViewModel.cs" />
     <Compile Include="ViewModels\MainPageEntryViewModel.cs" />

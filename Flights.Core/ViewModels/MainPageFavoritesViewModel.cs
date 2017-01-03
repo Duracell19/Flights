@@ -23,6 +23,7 @@ namespace Flights.Core.ViewModels
             }
         }
 
+        public ICommand ShowInfoAboutFlights { get; set; }
         public ICommand RefreshCommand { get; set; }
         public ICommand SetFlightCommand { get; set; }
 
@@ -32,6 +33,7 @@ namespace Flights.Core.ViewModels
             _fileStore = fileStore;
             FavoriteList = _fileStore.Load<ObservableCollection<Favorite>>(Defines.FAVORITE_LIST_FILE_NAME);
 
+            ShowInfoAboutFlights = new MvxCommand(() => ShowViewModel<AboutFlightsViewModel>());
             RefreshCommand = new MvxCommand(Refresh);
             SetFlightCommand = new MvxCommand<object>(SetFlight);
         }

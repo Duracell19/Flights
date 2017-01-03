@@ -23,6 +23,7 @@ namespace Flights.Core.ViewModels
         private ObservableCollection<FlyInfoShow> _flightsList;
         private DataOfFlights _dataOfFlights;
 
+        public ICommand ShowInfoAboutFlights { get; set; }
         public ICommand ShowFlightDetailsCommand { get; set; }
         public ICommand AddToFavoritesCommand { get; set; }
         
@@ -76,6 +77,7 @@ namespace Flights.Core.ViewModels
             _fileStore = fileStore;
             _flightsList = new ObservableCollection<FlyInfoShow>();
 
+            ShowInfoAboutFlights = new MvxCommand(() => ShowViewModel<AboutFlightsViewModel>());
             AddToFavoritesCommand = new MvxCommand(AddToFavorites);
             ShowFlightDetailsCommand = new MvxCommand<object>(ShowFlyDetails);
         }
