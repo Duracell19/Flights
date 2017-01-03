@@ -5,15 +5,23 @@ using System.Linq;
 
 namespace Flights.Core.Helpers
 {
+    /// <summary>
+    /// This class helps you work with AutoCompleteTextView controls
+    /// </summary>
     public class AutoCompleteTextViewHelper : INotifyPropertyChanged
     {
+        /// <summary>
+        /// List of items to show
+        /// </summary>
         public ObservableCollection<string> AutoCompleteList;
 
         public AutoCompleteTextViewHelper()
         {
             AutoCompleteList = new ObservableCollection<string>();
         }
-
+        /// <summary>
+        /// Event if property was changed
+        /// </summary>
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void RaisePropertyChanged(string propertyName)
@@ -24,7 +32,9 @@ namespace Flights.Core.Helpers
                 propertyChanged(this, new PropertyChangedEventArgs(propertyName));
             }
         }
-
+        /// <summary>
+        /// Current text in control
+        /// </summary>
         private string _currentText;
         public string CurrentText
         {
@@ -35,7 +45,9 @@ namespace Flights.Core.Helpers
                 RaisePropertyChanged("CurrentText");
             }
         }
-
+        /// <summary>
+        /// Current text in control with change
+        /// </summary>
         private string _currentTextHint;
         public string CurrentTextHint
         {
@@ -47,7 +59,9 @@ namespace Flights.Core.Helpers
         {
             AutoCompleteSuggestions = new List<string>();
         }
-
+        /// <summary>
+        /// List of items
+        /// </summary>
         private List<string> _autoCompleteSuggestions = new List<string>();
         public List<string> AutoCompleteSuggestions
         {
@@ -65,7 +79,10 @@ namespace Flights.Core.Helpers
                 RaisePropertyChanged("AutoCompleteSuggestions");
             }
         }
-
+        /// <summary>
+        /// If text in control was changed 
+        /// </summary>
+        /// <param name="value">Current text</param>
         private void Filter(string value)
         {
             if (value == "")
