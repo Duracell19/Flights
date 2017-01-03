@@ -105,7 +105,7 @@ namespace Flights.Core.ViewModels
             IsFlightsExist = FlightsList.Any() ? true : false;
         }
         /// <summary>
-        /// Commands
+        /// Implementation of commands
         /// </summary>
         private void AddToFavorites()
         {

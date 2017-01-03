@@ -33,7 +33,9 @@ namespace Flights.Core.ViewModels
         private DateTime _dateOneWay;
         private DateTime _dateReturn;
         private DataOfFlights _dataOfFlights;
-
+        /// <summary>
+        /// Properties to binding View and ViewModel
+        /// </summary>
         public bool IsAirportFromExist
         {
             get { return _isAirportFromExist; }
@@ -197,11 +199,18 @@ namespace Flights.Core.ViewModels
                 RaisePropertyChanged(() => DateReturn);
             }
         }
-        
+        /// <summary>
+        /// Initialization of commands
+        /// </summary>
         public ICommand FindFlightsCommand { get; set; }
         public ICommand SetOneWayCommand { get; set; }
         public ICommand SetReturnCommand { get; set; }
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="httpService">Parameter to work with http service</param>
+        /// <param name="jsonConverter">Parameter to work with json converter</param>
+        /// <param name="fileStore">Parameter to work with files</param>
         public MainPageEntryViewModel(IHttpService httpService,
             IJsonConverter jsonConverter, 
             IFileStore fileStore)
@@ -221,12 +230,17 @@ namespace Flights.Core.ViewModels
 
             Initialization();
         }
-
+        /// <summary>
+        /// Initialization of ViewModel if some parameters are come
+        /// </summary>
+        /// <param name="arg"></param>
         public void Init(Favorite arg)
         {
                          
         }
-
+        /// <summary>
+        /// Initialization
+        /// </summary>
         public void Initialization()
         {
             var countries = new Countries();
@@ -240,7 +254,9 @@ namespace Flights.Core.ViewModels
             DateOneWay = DateTime.Now;
             DateReturn = DateTime.Now;
         }
-
+        /// <summary>
+        /// Implementation of commands
+        /// </summary>
         private void FindFlights()
         {
             if (AllFieldsNotEmpty())
@@ -271,7 +287,10 @@ namespace Flights.Core.ViewModels
             IsEnabledDateReturn = true;
             _dataOfFlights.ReturnWay = true;
         }
-
+        /// <summary>
+        /// The methods witch allow to get cities by specific country
+        /// </summary>
+        /// <returns>Asynchronous result</returns>
         private async Task SetCitiesFromAsync()
         {
             var citiesService = new CitiesService(_httpService, _jsonConverter);
@@ -317,7 +336,10 @@ namespace Flights.Core.ViewModels
                 _dataOfFlights.CitiesTo = null;
             }
         }
-
+        /// <summary>
+        /// The methods witch allow to get iatas by specific country
+        /// </summary>
+        /// <returns>Asynchronous result</returns>
         private async Task SetIatasFromAsync()
         {
             var iataService = new IataService(_httpService, _jsonConverter);
@@ -335,13 +357,19 @@ namespace Flights.Core.ViewModels
             _dataOfFlights.IatasTo = iatasTo;
             IsDataAboutFlightExist = (IsDataAboutFlightExistCheck()) ? true : false;
         }
-
+        /// <summary>
+        /// Check if some fields are empty
+        /// </summary>
+        /// <returns>Empty or not empty</returns>
         private bool AllFieldsNotEmpty()
         {
             return ItemsCitiesFrom.CurrentTextHint != null && ItemsCitiesTo.CurrentTextHint != null &&
                 ItemsCountriesFrom.CurrentTextHint != null && ItemsCountriesTo.CurrentTextHint != null;
         }
-
+        /// <summary>
+        /// Check if data about flight exist
+        /// </summary>
+        /// <returns>Exist or not exist</returns>
         private bool IsDataAboutFlightExistCheck()
         {
             return IsAirportFromExist == true && IsAirportToExist == true &&
