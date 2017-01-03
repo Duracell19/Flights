@@ -12,7 +12,9 @@ namespace Flights.Core.ViewModels
         private readonly IJsonConverter _jsonConverter;
         private readonly IFileStore _fileStore;
         private ObservableCollection<Favorite> _favoriteList;
-
+        /// <summary>
+        /// Properties to binding View and ViewModel
+        /// </summary>
         public ObservableCollection<Favorite> FavoriteList
         {
             get { return _favoriteList; }
@@ -22,11 +24,17 @@ namespace Flights.Core.ViewModels
                 RaisePropertyChanged(() => FavoriteList);
             }
         }
-
+        /// <summary>
+        /// Initialization of commands
+        /// </summary>
         public ICommand ShowInfoAboutFlights { get; set; }
         public ICommand RefreshCommand { get; set; }
         public ICommand SetFlightCommand { get; set; }
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="jsonConverter">Parameter to work with json converter</param>
+        /// <param name="fileStore">Parameter to work with files</param>
         public MainPageFavoritesViewModel(IJsonConverter jsonConverter, IFileStore fileStore)
         {
             _jsonConverter = jsonConverter;
@@ -37,7 +45,9 @@ namespace Flights.Core.ViewModels
             RefreshCommand = new MvxCommand(Refresh);
             SetFlightCommand = new MvxCommand<object>(SetFlight);
         }
-
+        /// <summary>
+        /// Implementation of commands
+        /// </summary>
         private void Refresh()
         {
             FavoriteList = _fileStore.Load<ObservableCollection<Favorite>>(Defines.FAVORITE_LIST_FILE_NAME);
