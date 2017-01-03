@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <android.support.v7.widget.Toolbar xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
-    android:background="@android:color/holo_blue_light"
+    android:background="#b71919"
     android:layout_width="match_parent"
     android:layout_height="45dp">
-    <ImageButton 
-      android:src="@drawable/NotInFavorite"
-      style="@style/imageButtonFavoriteStyle"
-      local:MvxBind="Click RefreshCommand;"/>
+  <ImageButton
+    android:background="#b71919"
+    android:src="@drawable/refresh"
+    style="@style/imageButtonFavoriteStyle"
+    local:MvxBind="Click RefreshCommand;"/>
 </android.support.v7.widget.Toolbar>
