@@ -192,7 +192,7 @@
     <AndroidResource Include="Resources\layout\MainPageView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\MainPageToolbar.axml">
+    <AndroidResource Include="Resources\layout\MainPageFavoritesToolbar.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\MainPageEntryView.axml">

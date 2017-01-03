@@ -4,7 +4,7 @@
     android:background="@android:color/holo_blue_light"
     android:layout_width="match_parent"
     android:layout_height="45dp">
-  <ImageButton
-    style="@style/imageButtonFavoriteStyle"
-    local:MvxBind="Click AddToFavoritesCommand; Enabled Opposite(IsFlightAlreadyInFavorite); DrawableId BoolToFavoritePicture(IsFlightAlreadyInFavorite);" />
+    <ImageButton
+        style="@style/imageButtonFavoriteStyle"
+        local:MvxBind="Click AddToFavoritesCommand; Enabled Opposite(IsFlightAlreadyInFavorite); DrawableId BoolToFavoritePicture(IsFlightAlreadyInFavorite);" />
 </android.support.v7.widget.Toolbar>

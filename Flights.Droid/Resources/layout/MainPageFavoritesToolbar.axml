@@ -4,10 +4,8 @@
     android:background="@android:color/holo_blue_light"
     android:layout_width="match_parent"
     android:layout_height="45dp">
-    <ImageButton
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/searchImageButton"
-        android:src="@drawable/NotInFavorite"
-        android:background="@android:color/holo_blue_light" />
+    <ImageButton 
+      android:src="@drawable/NotInFavorite"
+      style="@style/imageButtonFavoriteStyle"
+      local:MvxBind="Click RefreshCommand;"/>
 </android.support.v7.widget.Toolbar>
