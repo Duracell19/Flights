@@ -29,7 +29,11 @@ namespace Flights.Droid.Views
             var listView = FindViewById<ListView>(Resource.Id.favoriteList);
             listView.ItemLongClick += listView_ItemLongClick;
         }
-
+        /// <summary>
+        /// Command exists to show flybase menu and make action with items in this menu
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void listView_ItemLongClick(object sender, AdapterView.ItemLongClickEventArgs e)
         {
             var menu = new PopupMenu(this, (View)sender);
@@ -38,6 +42,7 @@ namespace Flights.Droid.Views
             {
                 switch (a.Item.ItemId)
                 {
+                    // Delete command
                     case Resource.Id.pm_delete:
                         var index = e.Position;
                         var _fileStore = Mvx.Resolve<IMvxFileStore>();

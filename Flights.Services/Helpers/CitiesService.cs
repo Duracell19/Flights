@@ -10,13 +10,21 @@ namespace Flights.Services.Helpers
     {
         private readonly IHttpService _httpService;
         private readonly IJsonConverter _jsonConverter;
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="httpService">Parameter to work with http service</param>
+        /// <param name="jsonConverter">Parameter to work with json converter</param>
         public CitiesService(IHttpService httpService, IJsonConverter jsonConverter)
         {
             _httpService = httpService;
             _jsonConverter = jsonConverter;
         }
-
+        /// <summary>
+        /// The method witch get cities by specific country
+        /// </summary>
+        /// <param name="country">The name of country</param>
+        /// <returns>List of cities</returns>
         public async Task<List<string>> GetCitiesAsync(string country)
         {
             var uri = "http://flybaseapi.azurewebsites.net/odata/country('" + country + "')";

@@ -21,7 +21,7 @@ namespace Flights.Droid.Views
             
             TabHost.TabSpec spec;
             Intent intent;
-
+            //Set tabs in MainPageView
             spec = TabHost.NewTabSpec("MainPageEntryViewModel");
             spec.SetIndicator(Resources.GetString(Resource.String.entry));
             spec.SetContent(this.CreateIntentFor(MainPageViewModel.MainPageEntryViewModel));

@@ -4,6 +4,9 @@ namespace Flights.Services.Helpers
 {
     public class Countries
     {
+        /// <summary>
+        /// Set of countries
+        /// </summary>
         private static ObservableCollection<string> countries = new ObservableCollection<string>
    {
     "Afghanistan",
@@ -232,6 +235,10 @@ namespace Flights.Services.Helpers
     "Zambia",
     "Zimbabwe",
    };
+        /// <summary>
+        /// Get specified country
+        /// </summary>
+        /// <returns></returns>
         public ObservableCollection<string> GetCountries()
         {
             return countries;

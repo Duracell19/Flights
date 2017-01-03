@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Defines.cs" />
-    <Compile Include="Description.cs" />
     <Compile Include="Interfaces\ICitiesService.cs" />
     <Compile Include="Interfaces\IFileStore.cs" />
     <Compile Include="Interfaces\IFlightsService.cs" />
