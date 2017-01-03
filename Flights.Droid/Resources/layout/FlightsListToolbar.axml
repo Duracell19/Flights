@@ -9,5 +9,5 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@android:color/holo_blue_light"
-        local:MvxBind="Click AddToFavoritesCommand; Enabled Opposite(IsFlightAlreadyInFavorite); DrawableId BoolToFavoritePicture(IsFlightAlreadyInFavorite);"/>
+        local:MvxBind="Click AddToFavoritesCommand; Enabled Opposite(IsFlightAlreadyInFavorite); DrawableId BoolToFavoritePicture(IsFlightAlreadyInFavorite);" />
 </android.support.v7.widget.Toolbar>

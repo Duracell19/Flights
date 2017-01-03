@@ -23,12 +23,12 @@ namespace Flights.Droid.Views
             Intent intent;
 
             spec = TabHost.NewTabSpec("MainPageEntryViewModel");
-            spec.SetIndicator("Entry");
+            spec.SetIndicator(Resources.GetString(Resource.String.entry));
             spec.SetContent(this.CreateIntentFor(MainPageViewModel.MainPageEntryViewModel));
             TabHost.AddTab(spec);
 
             spec = TabHost.NewTabSpec("MainPageFavoritesViewModel");
-            spec.SetIndicator("Favorites");
+            spec.SetIndicator(Resources.GetString(Resource.String.favorites));
             spec.SetContent(this.CreateIntentFor(MainPageViewModel.MainPageFavoritesViewModel));
             TabHost.AddTab(spec);
         }

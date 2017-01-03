@@ -4282,11 +4282,35 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f070014
 			public const int appbar_scrolling_view_behavior = 2131165204;
 			
+			// aapt resource value: 0x7f070027
+			public const int arrival = 2131165223;
+			
+			// aapt resource value: 0x7f070021
+			public const int arrival_terminal = 2131165217;
+			
 			// aapt resource value: 0x7f070015
 			public const int bottom_sheet_behavior = 2131165205;
 			
+			// aapt resource value: 0x7f070022
+			public const int carrier_title = 2131165218;
+			
 			// aapt resource value: 0x7f070016
 			public const int character_counter_pattern = 2131165206;
+			
+			// aapt resource value: 0x7f07002b
+			public const int choose_city = 2131165227;
+			
+			// aapt resource value: 0x7f07002a
+			public const int choose_country = 2131165226;
+			
+			// aapt resource value: 0x7f070026
+			public const int departure = 2131165222;
+			
+			// aapt resource value: 0x7f070025
+			public const int duration = 2131165221;
+			
+			// aapt resource value: 0x7f070028
+			public const int entry = 2131165224;
 			
 			// aapt resource value: 0x7f070018
 			public const int fab_scroll_shrink_grow_autohide_behavior = 2131165208;
@@ -4294,11 +4318,38 @@ namespace Flights.Droid
 			// aapt resource value: 0x7f070019
 			public const int fab_scroll_translation_autohide_behavior = 2131165209;
 			
+			// aapt resource value: 0x7f070029
+			public const int favorites = 2131165225;
+			
+			// aapt resource value: 0x7f07001f
+			public const int find_flights = 2131165215;
+			
+			// aapt resource value: 0x7f07001b
+			public const int from = 2131165211;
+			
 			// aapt resource value: 0x7f070017
 			public const int library_name = 2131165207;
 			
+			// aapt resource value: 0x7f070020
+			public const int no_flights = 2131165216;
+			
+			// aapt resource value: 0x7f070024
+			public const int number = 2131165220;
+			
+			// aapt resource value: 0x7f07001d
+			public const int one_way = 2131165213;
+			
+			// aapt resource value: 0x7f07001e
+			public const int return_way = 2131165214;
+			
 			// aapt resource value: 0x7f070013
 			public const int status_bar_notification_info_overflow = 2131165203;
+			
+			// aapt resource value: 0x7f07001c
+			public const int to = 2131165212;
+			
+			// aapt resource value: 0x7f070023
+			public const int vehicle = 2131165219;
 			
 			static String()
 			{

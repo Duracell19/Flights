@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <string name="ApplicationName">Рейсы</string>
+  <string name="from">Откуда</string>
+  <string name="to">Куда</string>
+  <string name="one_way">Туда</string>
+  <string name="return_way">Обратно</string>
+  <string name="find_flights">Найти рейсы</string>
+  <string name="no_flights">Рейсы не найдены</string>
+  <string name="arrival_terminal">Терминал прибытия</string>
+  <string name="carrier_title">Авиалиния</string>
+  <string name="vehicle">Транспорт</string>
+  <string name="number">Номер</string>
+  <string name="duration">Расстояние</string>
+  <string name="departure">Отправление</string>
+  <string name="arrival">Прибытие</string>
+  <string name="entry">Ввод</string>
+  <string name="favorites">Избранные</string>
+  <string name="choose_country">Выберите страну</string>
+  <string name="choose_city">Выберите город</string>
+</resources>

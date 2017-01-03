@@ -1,4 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="ApplicationName">Flights</string>
-</resources>
+  <string name="ApplicationName">Flights</string>
+  <string name="from">From</string>
+  <string name="to">To</string>
+  <string name="one_way">One way</string>
+  <string name="return_way">Return</string>
+  <string name="find_flights">Find flights</string>
+  <string name="no_flights">There are no flights</string>
+  <string name="arrival_terminal">Arrival terminal</string>
+  <string name="carrier_title">Carrier title</string>
+  <string name="vehicle">Vehicle</string>
+  <string name="number">Number</string>
+  <string name="duration">Duration</string>
+  <string name="departure">Departure</string>
+  <string name="arrival">Arrival</string>
+  <string name="entry">Entry</string>
+  <string name="favorites">Favorites</string>
+  <string name="choose_country">Choose country</string>
+  <string name="choose_city">Choose city</string>
+  </resources>

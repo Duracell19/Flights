@@ -20,7 +20,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:text="There are no flights"
+            android:text="@string/no_flights"
             android:textSize="18dp"
             android:textColor="#FF959595"
             local:MvxBind="Visibility BoolToVisibility(IsFlightsExist)" />
