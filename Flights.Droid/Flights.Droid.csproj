@@ -232,6 +232,10 @@
       <Project>{526D5BAF-1C50-4963-874B-CD0B16241826}</Project>
       <Name>Flights.Infrastructure</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Flights.Models\Flights.Models.csproj">
+      <Project>{D6E8FEC9-2089-4E7E-96DA-208E7CA7BC88}</Project>
+      <Name>Flights.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable\Icon.png" />
