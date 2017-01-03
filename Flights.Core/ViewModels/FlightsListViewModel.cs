@@ -22,11 +22,15 @@ namespace Flights.Core.ViewModels
         private ObservableCollection<Favorite> _favoriteList;
         private ObservableCollection<FlyInfoShow> _flightsList;
         private DataOfFlights _dataOfFlights;
-
+        /// <summary>
+        /// Initialization of commands
+        /// </summary>
         public ICommand ShowInfoAboutFlights { get; set; }
         public ICommand ShowFlightDetailsCommand { get; set; }
         public ICommand AddToFavoritesCommand { get; set; }
-        
+        /// <summary>
+        /// Properties to binding View and ViewModel
+        /// </summary>
         public bool IsFlightsExist
         {
             get { return _isFlightsExist; }
@@ -66,7 +70,12 @@ namespace Flights.Core.ViewModels
                 RaisePropertyChanged(() => FlightsList);
             }
         }
-
+        /// <summary>
+        /// Constructor
+        /// </summary>
+        /// <param name="jsonConverter">Parameter to work with json converter</param>
+        /// <param name="fileStore">Parameter to work with files</param>
+        /// <param name="httpService">Parameter to work with http service</param>
         public FlightsListViewModel(
             IJsonConverter jsonConverter,
             IFileStore fileStore,
@@ -81,7 +90,11 @@ namespace Flights.Core.ViewModels
             AddToFavoritesCommand = new MvxCommand(AddToFavorites);
             ShowFlightDetailsCommand = new MvxCommand<object>(ShowFlyDetails);
         }
-
+        /// <summary>
+        /// Initialization
+        /// </summary>
+        /// <param name="param">Param witch come from MainPageEntryViewModel</param>
+        /// <returns>Asynchronous result</returns>
         public async Task Init(string param)
         {
             IsFlightsExist = true;
@@ -91,7 +104,9 @@ namespace Flights.Core.ViewModels
             await ShowFlightsAsync();
             IsFlightsExist = FlightsList.Any() ? true : false;
         }
-
+        /// <summary>
+        /// Commands
+        /// </summary>
         private void AddToFavorites()
         {
             AddFavorite();
@@ -122,7 +137,10 @@ namespace Flights.Core.ViewModels
                 IataTo = _dataOfFlights.IatasTo
             });
         }
-
+        /// <summary>
+        /// The method witch set one way ore return flights to show
+        /// </summary>
+        /// <returns>Asynchronous result</returns>
         private async Task ShowFlightsAsync()
         {
             IsLoading = true;
@@ -144,14 +162,25 @@ namespace Flights.Core.ViewModels
             IsFlightAlreadyInFavorite = _favoriteList.Any(IsFlightEqualOfFavorite);
             IsLoading = false;
         }
-
+        /// <summary>
+        /// Initialize data to show
+        /// </summary>
+        /// <param name="date">Date of flight</param>
+        /// <param name="from">Location from</param>
+        /// <param name="to">Location to</param>
+        /// <param name="isReversed">Is flight return</param>
+        /// <returns>Asynchronous result</returns>
         private async Task InitializeDataAsync(string date, List<string> from, List<string> to, bool isReversed = false)
         {
             var flightsService = new FlightsService(_httpService, _jsonConverter);
             var flyInfoOneWay = await flightsService.ConfigurationOfFlightsAsync(date, from, to);
             AddToFlightsList(flyInfoOneWay, isReversed);
         }
-
+        /// <summary>
+        /// the method witch add data to flights list
+        /// </summary>
+        /// <param name="flyInfoModel">Information about flight</param>
+        /// <param name="isReversedFlight">Is flight return</param>
         private void AddToFlightsList(List<FlyInfo> flyInfoModel, bool isReversedFlight = false)
         {
             foreach (var item in flyInfoModel)
@@ -159,7 +188,12 @@ namespace Flights.Core.ViewModels
                 FlightsList.Add(CreateFlyInfoShowModel(item, isReversedFlight));
             }
         }
-
+        /// <summary>
+        /// Create a model for showing
+        /// </summary>
+        /// <param name="infoModel">Information about flight</param>
+        /// <param name="isReversedFlight">Is flight return</param>
+        /// <returns>Information for showing</returns>
         private FlyInfoShow CreateFlyInfoShowModel(FlyInfo infoModel, bool isReversedFlight = false)
         {
             return new FlyInfoShow
@@ -176,7 +210,11 @@ namespace Flights.Core.ViewModels
                 IsReservedFlight = isReversedFlight
             };
         }
-
+        /// <summary>
+        /// The method is check if flight is exist in favorites
+        /// </summary>
+        /// <param name="model">Param to equal</param>
+        /// <returns>Exist or not exist</returns>
         private bool IsFlightEqualOfFavorite(Favorite model)
         {
             return model.CountryFrom == _dataOfFlights.CountryFrom && model.CityFrom == _dataOfFlights.CityFrom
