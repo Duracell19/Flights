@@ -24,6 +24,7 @@ namespace Flights.Core.ViewModels
         }
 
         public ICommand RefreshCommand { get; set; }
+        public ICommand SetFlightCommand { get; set; }
 
         public MainPageFavoritesViewModel(IJsonConverter jsonConverter, IFileStore fileStore)
         {
@@ -32,11 +33,21 @@ namespace Flights.Core.ViewModels
             FavoriteList = _fileStore.Load<ObservableCollection<Favorite>>(Defines.FAVORITE_LIST_FILE_NAME);
 
             RefreshCommand = new MvxCommand(Refresh);
+            SetFlightCommand = new MvxCommand<object>(SetFlight);
         }
 
         private void Refresh()
         {
             FavoriteList = _fileStore.Load<ObservableCollection<Favorite>>(Defines.FAVORITE_LIST_FILE_NAME);
+        }
+
+        private void SetFlight(object arg)
+        {
+            if (arg is Favorite)
+            {
+                var item = (Favorite)arg;
+
+            }
         }
     }
 }

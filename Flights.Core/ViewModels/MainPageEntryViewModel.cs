@@ -6,6 +6,8 @@ using Flights.Services.Helpers;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 using System;
+using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -220,6 +222,11 @@ namespace Flights.Core.ViewModels
             SetReturnCommand = new MvxCommand(SetReturn);
 
             Initialization();
+        }
+
+        public void Init(Favorite arg)
+        {
+                        
         }
 
         public void Initialization()

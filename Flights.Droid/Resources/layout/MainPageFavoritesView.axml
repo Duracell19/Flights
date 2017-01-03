@@ -4,13 +4,13 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <include 
-      layout="@layout/MainPageFavoritesToolbar" />
+    <include
+        layout="@layout/MainPageFavoritesToolbar" />
     <MvvmCross.Binding.Droid.Views.MvxListView
         android:id="@+id/favoriteList"
         android:longClickable="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         local:MvxItemTemplate="@layout/mainpagefavoriteitemsview"
-        local:MvxBind="ItemsSource FavoriteList;" />
+        local:MvxBind="ItemsSource FavoriteList; ItemClick SetFlightCommand" />
 </LinearLayout>
