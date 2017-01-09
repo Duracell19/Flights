@@ -14,7 +14,7 @@
                 style="@style/textFromStyle" />
             <MvxAutoCompleteTextView
                 style="@style/autoCompleteTextCountryFromStyle"
-                local:MvxBind="Text ItemsCountriesFrom.CurrentText, Mode=OneWay;                                ItemsSource ItemsCountriesFrom.AutoCompleteSuggestions;                                                                                   PartialText ItemsCountriesFrom.CurrentTextHint;                                                                          SelectedObject SelectedCountryFrom" />
+                local:MvxBind="Text ItemsCountriesFrom.CurrentText, Mode=OneWay;                  ItemsSource ItemsCountriesFrom.AutoCompleteSuggestions;                      PartialText ItemsCountriesFrom.CurrentTextHint;                   SelectedObject SelectedCountryFrom" />
             <MvxAutoCompleteTextView
                 style="@style/autoCompleteTextCityFromStyle"
                 local:MvxBind="Text ItemsCitiesFrom.CurrentText, Mode=OneWay;                                              ItemsSource ItemsCitiesFrom.AutoCompleteSuggestions;                                          PartialText ItemsCitiesFrom.CurrentTextHint;                                                    SelectedObject SelectedCityFrom;                                                                Enabled IsAirportFromExist" />
@@ -28,16 +28,16 @@
                 local:MvxBind="Text ItemsCitiesTo.CurrentText, Mode=OneWay;                                     ItemsSource ItemsCitiesTo.AutoCompleteSuggestions;                                    PartialText ItemsCitiesTo.CurrentTextHint;                                            SelectedObject SelectedCityTo;                                                        Enabled IsAirportToExist" />
             <RadioButton
                 style="@style/radioButtonOneWayStyle"
-                local:MvxBind="Click SetOneWayCommand;                                                     Checked IsCheckedOneWay" />
+                local:MvxBind="Click SetOneWayCommand;                   Checked IsCheckedOneWay" />
             <MvxDatePicker
                 style="@style/mvxDatePickerOneWayStyle"
                 local:MvxBind="Value DateOneWay" />
             <RadioButton
                 style="@style/radioButtonReturnStyle"
-                local:MvxBind="Click SetReturnCommand;                                                                   Checked IsCheckedReturn" />
+                local:MvxBind="Click SetReturnCommand;                  Checked IsCheckedReturn" />
             <MvxDatePicker
                 style="@style/mvxDatePickerReturnStyle"
-                local:MvxBind="Value DateReturn;                                Enabled IsEnabledDateReturn" />
+                local:MvxBind="Value DateReturn;                   Enabled IsEnabledDateReturn" />
         </AbsoluteLayout>
         <Button
             style="@style/buttonFindStyle"

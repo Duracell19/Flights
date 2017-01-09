@@ -1,5 +1,4 @@
-﻿using Acr.UserDialogs;
-using Flights.Core.ViewModels;
+﻿using Flights.Core.ViewModels;
 using Flights.Infrastructure.Interfaces;
 using Flights.Services;
 using MvvmCross.Core.ViewModels;
@@ -20,8 +19,6 @@ namespace Flights.Core
             Mvx.RegisterType<IHttpService, HttpService>();
             Mvx.RegisterType<IJsonConverter, JsonConverter>();
             Mvx.RegisterType<IFileStore, FileStore>();
-
-            Mvx.RegisterSingleton(() => UserDialogs.Instance);
 
             RegisterAppStart<MainPageViewModel>();
         }

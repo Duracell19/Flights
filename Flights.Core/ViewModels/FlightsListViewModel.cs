@@ -25,7 +25,7 @@ namespace Flights.Core.ViewModels
         /// <summary>
         /// Initialization of commands
         /// </summary>
-        public ICommand ShowInfoAboutFlights { get; set; }
+        public ICommand ShowInfoAboutFlightsCommand { get; set; }
         public ICommand ShowFlightDetailsCommand { get; set; }
         public ICommand AddToFavoritesCommand { get; set; }
         /// <summary>
@@ -86,9 +86,9 @@ namespace Flights.Core.ViewModels
             _fileStore = fileStore;
             _flightsList = new ObservableCollection<FlyInfoShow>();
 
-            ShowInfoAboutFlights = new MvxCommand(() => ShowViewModel<AboutFlightsViewModel>());
+            ShowInfoAboutFlightsCommand = new MvxCommand(() => ShowViewModel<AboutFlightsViewModel>());
             AddToFavoritesCommand = new MvxCommand(AddToFavorites);
-            ShowFlightDetailsCommand = new MvxCommand<object>(ShowFlyDetails);
+            ShowFlightDetailsCommand = new MvxCommand<object>(ShowFlightDetails);
         }
         /// <summary>
         /// Initialization
@@ -114,7 +114,7 @@ namespace Flights.Core.ViewModels
             IsFlightAlreadyInFavorite = true;
         }
 
-        private void ShowFlyDetails(object arg)
+        private void ShowFlightDetails(object arg)
         {
             if (arg is FlyInfoShow)
             {

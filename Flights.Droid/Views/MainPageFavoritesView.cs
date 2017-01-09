@@ -1,6 +1,5 @@
 using Android.App;
 using Android.OS;
-using Acr.UserDialogs;
 using MvvmCross.Droid.Views;
 using Android.Views;
 using Android.Widget;
@@ -23,8 +22,6 @@ namespace Flights.Droid.Views
             base.OnCreate(savedInstanceState);
             
             SetContentView(Resource.Layout.MainPageFavoritesView);
-
-            UserDialogs.Init(this);
 
             var listView = FindViewById<ListView>(Resource.Id.favoriteList);
             listView.ItemLongClick += listView_ItemLongClick;

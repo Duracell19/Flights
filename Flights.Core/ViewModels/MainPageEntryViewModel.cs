@@ -1,10 +1,8 @@
-﻿using Acr.UserDialogs;
-using Flights.Core.Helpers;
+﻿using Flights.Core.Helpers;
 using Flights.Infrastructure.Interfaces;
 using Flights.Models;
 using Flights.Services.Helpers;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Platform;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -223,11 +221,11 @@ namespace Flights.Core.ViewModels
             _itemsCountriesTo = new AutoCompleteTextViewHelper();
             _itemsCitiesFrom = new AutoCompleteTextViewHelper();
             _itemsCitiesTo = new AutoCompleteTextViewHelper();
-            
+
             FindFlightsCommand = new MvxCommand(FindFlights);
             SetOneWayCommand = new MvxCommand(SetOneWay);
             SetReturnCommand = new MvxCommand(SetReturn);
-
+            
             Initialization();
         }
         /// <summary>
@@ -245,7 +243,7 @@ namespace Flights.Core.ViewModels
         {
             var countries = new Countries();
             ItemsCountriesFrom.AutoCompleteList = countries.GetCountries();
-            ItemsCountriesTo = ItemsCountriesFrom;
+            ItemsCountriesTo.AutoCompleteList = countries.GetCountries();
             IsAirportFromExist = false;
             IsAirportToExist = false;
             IsDataAboutFlightExist = false;
@@ -259,17 +257,10 @@ namespace Flights.Core.ViewModels
         /// </summary>
         private void FindFlights()
         {
-            if (AllFieldsNotEmpty())
-            {
-                _dataOfFlights.DateOneWay = DateOneWay.ToString("yyyy-MM-dd");
-                _dataOfFlights.DateReturn = DateReturn.ToString("yyyy-MM-dd");
-                var param = _jsonConverter.Serialize(_dataOfFlights);
-                ShowViewModel<FlightsListViewModel>(new { param });
-            }
-            else
-            {
-                Mvx.Resolve<IUserDialogs>().Alert("Some fields are empty!");
-            }
+            _dataOfFlights.DateOneWay = DateOneWay.ToString("yyyy-MM-dd");
+            _dataOfFlights.DateReturn = DateReturn.ToString("yyyy-MM-dd");
+            var param = _jsonConverter.Serialize(_dataOfFlights);
+            ShowViewModel<FlightsListViewModel>(new { param });
         }
 
         private void SetOneWay()
@@ -296,16 +287,13 @@ namespace Flights.Core.ViewModels
             var citiesService = new CitiesService(_httpService, _jsonConverter);
             _dataOfFlights.CountryFrom = SelectedCountryFrom;
             var citiesFrom = await citiesService.GetCitiesAsync(SelectedCountryFrom);
-        
             if (citiesFrom != null)
             {
                 ItemsCitiesFrom.AutoCompleteList.Clear();
-                foreach (var city in citiesFrom)
-                {
-                    ItemsCitiesFrom.AutoCompleteList.Add(city);
-                    IsAirportFromExist = true;
-                }
+                ItemsCitiesFrom.AutoCompleteList = citiesFrom;
+                IsAirportFromExist = true;
                 _dataOfFlights.CitiesFrom = citiesFrom;
+                RaisePropertyChanged(() => ItemsCitiesFrom);
             }
             else
             {
@@ -319,16 +307,13 @@ namespace Flights.Core.ViewModels
             var citiesService = new CitiesService(_httpService, _jsonConverter);
             _dataOfFlights.CountryTo = SelectedCountryTo;
             var citiesTo = await citiesService.GetCitiesAsync(SelectedCountryTo);
-
             if (citiesTo != null)
             {
                 ItemsCitiesTo.AutoCompleteList.Clear();
-                foreach (var city in citiesTo)
-                {
-                    ItemsCitiesTo.AutoCompleteList.Add(city);
-                    IsAirportToExist = true;
-                }
+                ItemsCitiesTo.AutoCompleteList = citiesTo;
+                IsAirportToExist = true;
                 _dataOfFlights.CitiesTo = citiesTo;
+                RaisePropertyChanged(() => ItemsCitiesTo);
             }
             else
             {
@@ -356,15 +341,6 @@ namespace Flights.Core.ViewModels
             var iatasTo = await iataService.GetIataAsync(SelectedCityTo);
             _dataOfFlights.IatasTo = iatasTo;
             IsDataAboutFlightExist = (IsDataAboutFlightExistCheck()) ? true : false;
-        }
-        /// <summary>
-        /// Check if some fields are empty
-        /// </summary>
-        /// <returns>Empty or not empty</returns>
-        private bool AllFieldsNotEmpty()
-        {
-            return ItemsCitiesFrom.CurrentTextHint != null && ItemsCitiesTo.CurrentTextHint != null &&
-                ItemsCountriesFrom.CurrentTextHint != null && ItemsCountriesTo.CurrentTextHint != null;
         }
         /// <summary>
         /// Check if data about flight exist

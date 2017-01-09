@@ -1,4 +1,3 @@
-using Acr.UserDialogs;
 using Android.App;
 using Android.OS;
 using MvvmCross.Droid.Views;
@@ -13,8 +12,6 @@ namespace Flights.Droid.Views
             base.OnCreate(savedInstanceState);
 
             SetContentView(Resource.Layout.MainPageEntryView);
-
-            UserDialogs.Init(this);
         }
     }
 }

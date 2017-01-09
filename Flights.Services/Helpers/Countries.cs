@@ -1,4 +1,5 @@
-﻿using System.Collections.ObjectModel;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Flights.Services.Helpers
 {
@@ -7,7 +8,7 @@ namespace Flights.Services.Helpers
         /// <summary>
         /// Set of countries
         /// </summary>
-        private static ObservableCollection<string> countries = new ObservableCollection<string>
+        private static List<string> countries = new List<string>
    {
     "Afghanistan",
     "Albania",
@@ -239,7 +240,7 @@ namespace Flights.Services.Helpers
         /// Get specified country
         /// </summary>
         /// <returns></returns>
-        public ObservableCollection<string> GetCountries()
+        public List<string> GetCountries()
         {
             return countries;
         }

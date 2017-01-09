@@ -8,9 +8,9 @@
         android:background="#800080"
         style="@style/imageButtonFavoriteStyle"
         local:MvxBind="Click AddToFavoritesCommand; Enabled Opposite(IsFlightAlreadyInFavorite); DrawableId BoolToFavoritePicture(IsFlightAlreadyInFavorite);" />
-  <ImageButton
+    <ImageButton
         android:background="#800080"
         android:src="@drawable/about"
         style="@style/imageButtonFavoriteStyle"
-        local:MvxBind="Click ShowInfoAboutFlights;" />
+        local:MvxBind="Click ShowInfoAboutFlightsCommand;" />
 </android.support.v7.widget.Toolbar>

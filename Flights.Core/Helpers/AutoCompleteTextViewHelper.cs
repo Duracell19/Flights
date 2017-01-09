@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 
@@ -13,11 +12,11 @@ namespace Flights.Core.Helpers
         /// <summary>
         /// List of items to show
         /// </summary>
-        public ObservableCollection<string> AutoCompleteList;
+        public List<string> AutoCompleteList { get; set; }
 
         public AutoCompleteTextViewHelper()
         {
-            AutoCompleteList = new ObservableCollection<string>();
+            AutoCompleteList = new List<string>();
         }
         /// <summary>
         /// Event if property was changed
