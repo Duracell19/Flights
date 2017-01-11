@@ -229,14 +229,6 @@ namespace Flights.Core.ViewModels
             Initialization();
         }
         /// <summary>
-        /// Initialization of ViewModel if some parameters are come
-        /// </summary>
-        /// <param name="arg"></param>
-        public void Init(Favorite arg)
-        {
-                         
-        }
-        /// <summary>
         /// Initialization
         /// </summary>
         public void Initialization()
