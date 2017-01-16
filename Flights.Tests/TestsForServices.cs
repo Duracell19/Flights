@@ -9,6 +9,11 @@ namespace Flights.Tests
     [TestClass]
     public class TestsForServices
     {
+        /// <summary>
+        /// This test check if method return countries
+        /// </summary>
+        /// <param name="expected">expected result</param>
+        /// <param name="assertMessage">assert message</param>
         #region Countries.GetCountries tests
         public void CountriesTest(string expected, string assertMessage)
         {
@@ -26,7 +31,12 @@ namespace Flights.Tests
                 );
         }
         #endregion Countries.GetCountries tests
-
+        /// <summary>
+        /// This test check if method return a good request
+        /// </summary>
+        /// <param name="url">url</param>
+        /// <param name="expected">expected result</param>
+        /// <param name="assertMessage">assert message</param>
         #region HttpService.GetRequestAsync tests
         public void HttpServiceTest(string url, string expected, string assertMessage)
         {
@@ -51,7 +61,13 @@ namespace Flights.Tests
                 );
         }
         #endregion HttpService.GetRequestAsync tests
-
+        /// <summary>
+        /// This test check if method deserialize data
+        /// </summary>
+        /// <typeparam name="T">type of deserialize</typeparam>
+        /// <param name="str">string to deserialize</param>
+        /// <param name="expected">expected result</param>
+        /// <param name="assertMessage">assert message</param>
         #region JsonConverter.Deserialize tests
         public void JsonConverterDeserializeTest<T>(string str, string expected, string assertMessage)
         {
@@ -70,7 +86,13 @@ namespace Flights.Tests
                 );
         }
         #endregion JsonConverter.Deserialize tests
-
+        /// <summary>
+        /// This test check if method return serialize data
+        /// </summary>
+        /// <typeparam name="T">type of serialize</typeparam>
+        /// <param name="obj">object to serialize</param>
+        /// <param name="expected">expected result</param>
+        /// <param name="assertMessage">assert message</param>
         #region JsonConverter.Serialize tests
         public void JsonConverterSerializeTest<T>(object obj, string expected, string assertMessage)
         {
